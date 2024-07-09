@@ -1,5 +1,5 @@
 [![Deploy to GitHub
-Pages](https://github.com/rmnicola/m9-ec-encontros/actions/workflows/deploy.yaml/badge.svg)](https://github.com/rmnicola/m9-ec-encontros/actions/workflows/deploy.yaml)
+Pages](https://github.com/rmnicola/m11-ec-encontros/actions/workflows/deploy.yaml/badge.svg)](https://github.com/rmnicola/m11-ec-encontros/actions/workflows/deploy.yaml)
 
 # Módulo de Edge Computing
 
