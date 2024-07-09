@@ -7,7 +7,7 @@ TODO - descrição do módulo
 
 Este material foi feito utilizando o [docusaurus](https://docusaurus.io/), com
 a página gerada hospedada no Github pages. Para acessar o material renderizado,
-acesse [esse link](https://rmnicola.github.io/m9-ec-encontros/).
+acesse [esse link](https://rmnicola.github.io/m11-ec-encontros/).
 
 ## Estrutura de pastas
 
