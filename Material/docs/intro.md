@@ -7,12 +7,12 @@ slug: /
 # Edge Computing
 
 <img 
-  src="/img/rick-slap.jpg"
+  src="img/rick-slap.jpg"
   alt="Um tapinha não dói" 
   style={{ 
     display: 'block',
     marginLeft: 'auto',
-    maxHeight: '20vh',
+    maxHeight: '30vh',
     marginRight: 'auto'
   }} 
 />
@@ -22,24 +22,9 @@ TODO - Descrição do módulo
 
 :::danger
 
-Esse material **NÃO** substitui de forma alguma o uso da **Adalove**. Você
-**DEVE** entrar na Adalove com frequência e **REGISTRAR O SEU PROGRESSO**.
-Entendeu? Ainda não? Pera aí que vou desenhar:
-
-<img 
-  src="img/aviso-adalove.png"
-  alt="ACESSE A ADALOVE" 
-  style={{ 
-    display: 'block',
-    marginLeft: 'auto',
-    maxHeight: '40vh',
-    marginRight: 'auto'
-  }} 
-/>
+TODO - Novo aviso
 
 :::
-
-Beleza, agora podemos seguir em frente.
 
 ## 1. Descrição do módulo e assuntos abordados
 
