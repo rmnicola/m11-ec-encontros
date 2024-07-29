@@ -50,7 +50,7 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Material de computação',
         },
         {to: '/blog', label: 'A última luz do olho direito', position: 'right'},
         {
