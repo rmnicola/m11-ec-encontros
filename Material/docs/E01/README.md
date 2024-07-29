@@ -8,6 +8,18 @@ slug: /e1
 
 **Encontro em 06/08/2024**
 
+<img 
+  src="https://gyabbo.wordpress.com/wp-content/uploads/2020/12/3a48f-puck.jpg"
+  alt="Puck!"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '70vh',
+    marginRight: 'auto'
+  }} 
+/>
+<br/>
+
 O primeiro encontro do módulo será focado em apresentar a dinâmica do módulo em
 si; o que estudaremos, como está organizado o material, quais atividades
 teremos no decorrer do módulo e como será sua correção e, por fim, qual será a
