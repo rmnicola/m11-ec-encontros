@@ -298,7 +298,7 @@ programadores tirem vantagem da arquitetura subjacente e maximizem a
 performance do sistema.
 
 <img 
-  src="img/UMANUMA.png"
+  src="https://ars.els-cdn.com/content/image/1-s2.0-B9780124080898000033-f03-04-9780124080898.jpg"
   alt="UMANUMANUMAEH"
   style={{ 
     display: 'block',
@@ -338,12 +338,12 @@ desempenho, onde a latência da comunicação e a banda larga da rede são fator
 críticos para o desempenho geral do sistema.
 
 <img 
-  src="img/distributed.png"
+  src="https://www.researchgate.net/publication/309652802/figure/fig7/AS:669409957904393@1536611179704/Uniform-left-vs-non-uniform-right-memory-access-models.png"
   alt="Distributed memory system"
   style={{ 
     display: 'block',
     marginLeft: 'auto',
-    maxHeight: '50vh',
+    maxHeight: '30vh',
     marginRight: 'auto'
   }} 
 />
