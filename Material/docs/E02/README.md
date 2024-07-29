@@ -1,5 +1,5 @@
 ---
-title: E2 - Arquitetura de computadores
+title: E2 - Arquitetura de computadores I
 sidebar_position: 6
 slug: /e2
 ---
