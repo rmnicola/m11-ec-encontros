@@ -1,10 +1,10 @@
 ---
-title: E6 - Arquitetura de CPUs II
+title: E6 - Arquitetura de CPUs I
 sidebar_position: 10
 slug: /e6
 ---
 
-# Arquitetura de CPUs II
+# Arquitetura de CPUs I
 
 **Encontro em 22/08/2024**
 

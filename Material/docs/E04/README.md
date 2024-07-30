@@ -1,10 +1,10 @@
 ---
-title: E4 - Arquitetura de CPUs I
+title: E4 - Memória
 sidebar_position: 8
 slug: /e4
 ---
 
-# Arquitetura de CPUs I
+# Construindo circuitos lógicos
 
 **Encontro em 15/08/2024**
 
