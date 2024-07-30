@@ -8,4 +8,8 @@ sidebar_class_name: autoestudo
 
 ## 1. Instalando o Digital
 
+TODO - tutorial de instalação do Digital
+
 ## 2. Utilizando o Digital
+
+TODO - vídeo de como utilizar o Digital
