@@ -1,5 +1,5 @@
 ---
-title: E2 - Arquitetura de computadores I
+title: E2 - Circuitos lógicos
 sidebar_position: 6
 slug: /e2
 ---
