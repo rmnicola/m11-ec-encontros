@@ -731,8 +731,8 @@ Vamos seguir em frente!
 
 Temos mais dois paradigmas importantes para abordar:
 
-1. Computação em névoa (*Fog computing); e
-2. Computação na borda (*Edge computing).
+1. Computação em névoa (*Fog computing*); e
+2. Computação na borda (*Edge computing*).
 
 Mas essas duas são *tão* importantes para esse módulo que merecem uma seção só
 para elas, então clica ali no link da próxima seção que eu explico para você.
