@@ -537,114 +537,202 @@ quanto acesso distribuído pelas unidades computacionais.</center></p>
 
 ## 3. Computação distribuída
 
-A computação distribuída é uma área da informática que se concentra na
-utilização de múltiplos sistemas de computação para trabalhar em conjunto em
-uma única tarefa ou conjunto de tarefas. Esta abordagem permite a resolução de
-problemas complexos de forma mais rápida e eficiente ao distribuir a carga de
-trabalho entre vários computadores. Em vez de depender de um único
-supercomputador poderoso, a computação distribuída aproveita a capacidade
-combinada de vários sistemas menores, interconectados através de redes. Esta
-arquitetura não apenas melhora o desempenho e a escalabilidade, mas também
-proporciona maior resiliência e flexibilidade, pois os recursos podem ser
-gerenciados e alocados conforme necessário.
+A computação paralela resolveu bem o problema do "fim da lei de moore", porém
+uma coisa que aconteceu muito rápido é que o aumento da demanda por recursos
+computacionais começou a vencer até mesmo a acelerada evolução da capacidade
+computacional dos processadores. O que fazer quando nem com um programa rodando
+em paralelo em vários núcleos consegue a performance que você precisa? Seguindo
+a mesma lógica que nos levou à computação paralela, a resposta é **mais
+computadores**.
 
-Dentro do campo da computação distribuída, duas áreas específicas se destacam:
-Clusters e High-Performance Computing (HPC). 
+Ok, agora começou a ficar bem mais complexo. Quando falamos de computação
+distribuída estamos falando de vários computadores trabalhando em conjunto para
+resolver o mesmo problema, e isso pode assumir muitas caras. Logo de cara, há
+uma lista de expectativas para que sequer valha a pena seguir com esse
+paradigma:
 
-### 3.1. Clusters
+1. **Transparência**: o sistema deve fornecer ao usuário o uso do conjunto de
+   computadores tendo em vista apenas o problema computacional a ser resolvido,
+   de modo que a infraestrutura em si fica "transparente", ou seja, o usuário
+   não precisa se preocupar com isso.
+2. **Confiabilidade**: o sistema não pode ter um ponto de falha único que faça
+   todo o sistema sair do ar. Para isso, sistemas de computação distribuída
+   devem ser capazes de detectar e se recuperar de *crashes*.
+3. **Escalabilidade**: o sistema deve ter a flexibilidade para aumentar de
+   forma que o custo não aumente exponencialmente. Sendo assim, a relação entre
+   custo e benefício de utilizar esse tipo de sistema se justifica perando um
+   sistema centralizado.
+4. **Segurança**: os recursos (dados) de um sistema de computação distribuída
+   devem ter proteção contra destruição ou acesso não autorizado.
+5. **Performance**: esse ponto é um tanto óbvio, mas deve haver um ganho real
+   de performance para justificar utilizar um sistema distribuído em vez de um
+   único computador.
+
+A partir dessas expectativas, surgem alguns paradigmas distintos dentro da
+computação distribuída:
+
+1. **Peer-to-peer**
+2. **Clusters**
+3. **Grid computing**
+
+### 3.1. Peer-to-peer
+
+Quando falamos em peer-to-peer, é praticamente impossível para qualquer pessoa
+que seja versada na cultura da internet não lembrar imediatamente das
+tecnologias de *torrent*. Sistemas de *torrent* são caracterizados pelo
+compartilhamento de conteúdo sem que os arquivos estejam localizados em um
+servidor centralizado. Na verdade, nem mesmo existe o conceito de *servidor* e
+*cliente*. Esses são substituídos por *peers* e *leechers*. Os pares (*peers*)
+são aqueles dispositivos que já tem o arquivo completo e estão servindo os
+arquivos para os *leechers*, ou sanguessugas (essa tradução fica um tanto feia
+no português =O).
+
+<img
+  src="https://www.gta.ufrj.br/ensino/eel878/redes1-2018-1/trabalhos-v1/p2p/images/p2p_model.png"
+  alt="Distributed memory system"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '30vh',
+    marginRight: 'auto'
+  }} 
+/>
+<br/>
+<p><center>Fig 2.14 - O modelo peer-to-peer é marcado por ser uma rede de
+computadores resolvendo um mesmo problema, mas sem um nó gerenciador. Todos os
+nós são iguais e contribuem para a computação.</center></p>
+
+Usando a analogia com o sistema de *torrent*, podemos concluir que o modelo de
+computação peer-to-peer (P2P) caracteriza-se pela ausência de um servidor
+central, com cada nó na rede funcionando simultaneamente como cliente
+e servidor. Essa arquitetura descentralizada oferece várias vantagens,
+incluindo a distribuição de carga de trabalho, maior resiliência a falhas e a
+eliminação de pontos únicos de falha. Em um sistema P2P, cada nó pode
+compartilhar recursos, como arquivos ou poder de processamento, diretamente com
+outros nós, facilitando a colaboração e o compartilhamento de informações.
+
+:::tip Exercício 2.08
+
+Apesar do torrent ser o exemplo mais clássico possível, há outros sistemas que
+funcionam utilizando o paradigma peer-to-peer. Pesquise e cite ao menos mais
+dois exemplos (um dos exemplos possíveis é até mais famoso que torrent hoje em
+dia).
+
+:::
+
+
+### 3.2. Clusters
+
+<img
+  src="https://media.geeksforgeeks.org/wp-content/uploads/20210313225739/UntitledDiagram4.png"
+  alt="Clusters"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '30vh',
+    marginRight: 'auto'
+  }} 
+/>
+<br/>
+<p><center>Fig 2.15 - Um cluster de computadores se caracteriza por ser uma
+estrutura mais organizada, com um computador raíz (*root*) que gerencia o
+serviço que envia a outros computadores dentro do cluster.</center></p>
 
 Clusters são conjuntos de computadores interconectados que trabalham em
-conjunto como se fossem um único sistema. Cada nó de um cluster possui seus
-próprios recursos de processamento e memória, e a comunicação entre os nós é
-feita através de redes de alta velocidade. Clusters são amplamente utilizados
-em aplicações que requerem grande capacidade de processamento e armazenamento,
-como em simulações científicas, análise de grandes volumes de dados e serviços
-de hospedagem web. A configuração de um cluster pode variar desde alguns
-computadores conectados em rede local até milhares de nós espalhados por data
-centers, permitindo uma escalabilidade significativa.
+conjunto para atuar como um único sistema coeso. Cada nó de um cluster possui
+seus próprios recursos de processamento e memória, e a comunicação entre os nós
+é realizada através de redes de alta velocidade. Esse modelo é amplamente
+utilizado em aplicações que requerem grande capacidade de processamento e
+armazenamento, como simulações científicas, análise de grandes volumes de dados
+e hospedagem de serviços web.
 
-### 3.2. HPC
+A configuração de um cluster pode variar significativamente, desde alguns
+computadores conectados em uma rede local até milhares de nós distribuídos em
+data centers. Clusters permitem uma escalabilidade significativa, onde o
+desempenho pode ser melhorado com a adição de mais nós ao sistema. Um exemplo
+notável é o uso de clusters em supercomputação, onde tarefas extremamente
+complexas, como simulações climáticas ou sequenciamento genético, são divididas
+e distribuídas entre vários nós para serem processadas de forma paralela e
+eficiente.
 
-High-Performance Computing (HPC), por sua vez, refere-se ao uso de
-supercomputadores e clusters de alta capacidade para resolver problemas
-extremamente complexos e computacionalmente intensivos. HPC é essencial em
-campos como modelagem climática, bioinformática, física de partículas e
-engenharia, onde as simulações e análises exigem poder de processamento que vai
-além das capacidades dos computadores comuns. Sistemas HPC são projetados para
-maximizar o desempenho e a eficiência, utilizando tecnologias avançadas de
-hardware e software, como processadores de múltiplos núcleos, redes de alta
-velocidade e algoritmos paralelos. Além disso, a infraestrutura HPC
-frequentemente emprega técnicas sofisticadas de gerenciamento de recursos e
-otimização para garantir que o poder de computação seja utilizado de maneira
-eficaz e eficiente. Em resumo, a computação distribuída, com ênfase em clusters
-e HPC, continua a ser uma área vital para a ciência, a indústria e a inovação
-tecnológica, permitindo avanços significativos em diversas disciplinas.
+O paradigma de clusters destaca-se por sua alta disponibilidade e
+confiabilidade, com redundância embutida para mitigar falhas de hardware. Além
+disso, a infraestrutura de clusters frequentemente inclui sistemas de
+gerenciamento de recursos e balanceamento de carga para otimizar o uso dos
+recursos disponíveis. Isso torna os clusters uma escolha popular para
+organizações que necessitam de soluções robustas e escaláveis para
+processamento intensivo de dados.
+
+### 3.3. Grid computing
+
+:::tip Exercício 2.09
+
+Surpresa! Essa seção está intencionalmente vazia. Grid computing é um dos
+paradigmas que aparece de forma razoavelmente prevalente em nossa sociedade,
+mas tipicamente acaba sendo um dos paradigmas "esquecidos". Sua tarefa é
+pesquisar o que é grid computing e dar pelo menos um exemplo de sua aplicação.
+
+:::
 
 ## 4. Computação em nuvem
 
-A computação em nuvem é um paradigma que permite o acesso sob demanda a um pool
-compartilhado de recursos computacionais, como servidores, armazenamento, redes
-e aplicativos, através da internet. Esse modelo revolucionou a maneira como as
-empresas e indivíduos utilizam a tecnologia, oferecendo flexibilidade,
-escalabilidade e economia de custos. Em vez de investir em infraestrutura
-física e gerenciar hardware localmente, os usuários podem alocar recursos de
-acordo com suas necessidades específicas, pagando apenas pelo que utilizam.
-Isso não só reduz o capital inicial necessário para novos projetos, mas também
-permite que organizações escalem suas operações rapidamente para atender a
-picos de demanda ou ajustem-se a condições variáveis do mercado.
+A ideia de utilizar vários computadores para resolver o mesmo problema já foi
+um divisor de águas para quem precisava de mais recurso computacional e tinha
+esbarrado no limite do que era possível com apenas um computador de alta
+performance, mas nem tudo na computação diz respeito à performance. Com o
+crescimento desenfreado da internet, começou a ser cada vez mais comum a
+necessidade de empresas de servir serviços computacionalmente intensos (ou não)
+para vários continentes ao mesmo tempo. Aqui o problema deixou de ser
+performance para ser um problema um *pouco* mais difícil de resolver: a
+distância entre o servidor e o cliente.
 
-A computação em nuvem é geralmente categorizada em três modelos de serviço
-principais: Infraestrutura como Serviço (IaaS), Plataforma como Serviço (PaaS)
-e Software como Serviço (SaaS). No modelo IaaS, os provedores de nuvem oferecem
-componentes de infraestrutura básica, como máquinas virtuais, redes e
-armazenamento, permitindo que os clientes construam suas próprias plataformas
-de TI sobre essa base. O PaaS fornece um ambiente de desenvolvimento completo,
-incluindo ferramentas e frameworks, facilitando a criação e implementação de
-aplicativos sem a necessidade de gerenciar a infraestrutura subjacente. O SaaS,
-por sua vez, entrega aplicativos prontos para uso que são hospedados e mantidos
-pelos provedores, como software de gerenciamento de relacionamento com clientes
-(CRM) ou plataformas de e-mail. Juntos, esses modelos permitem que as
-organizações se concentrem em suas competências principais, delegando a
-complexidade e os custos da gestão de TI aos provedores de nuvem.
+Por que um *pouco* mais difícil? Pensa comigo: aproximando a terra para uma
+esfera perfeita ela teria a circunferência aproximada de 40 mil km. Vamos
+considerar a maior distância possível que um sinal deve percorrer no planeta,
+portanto vamos dividir a circunferência por dois e chegamos a 20 mil km
+aproximadamente. Sinais elétricos atingem a velocidade da luz, que é
+aproximadamente de 300 mil km/s. O que isso significa? Que um sinal percorre
+meia circunferência terrestre em pouco menos de 100 ms. Isso... não parece
+muito, né? Errado! É muito sim. Considere a quantidade de trocas de informação
+que precisam acontecer (indo e voltando) para que um simples site seja
+carregado e considere, também, que um sinal jamais vai percorrer toda essa
+extensão sem passar por pelo menos uma dezena de roteadores/servidores de DNS.
+O resultado? De fato, temos situações em que há um gap de resposta entre o
+cliente e o servidor que é absolutamente incompatível com as demandas de
+usabilidade da internet.
 
-## 5. Computação em névoa
+Qual a solução, então? Óbvio! Ter um (ou mais) servidores em cada um dos
+continentes do planeta! Isso pareceu tão proibitivo para você quanto para mim?
+É porque, para a maioria das empresas, isso é absolutamente proibitivo. Entram
+na jogada os nossos bilionários ~odiados~ favoritos com suas infraestruturas de
+servidores globais e uma vontade de tornar mais da metade das empresas que
+trabalham com computação em viciados por IaaS e temos a solução para esse
+problema!
 
-Fog computing, também conhecida como computação em névoa, é uma extensão do
-paradigma de computação em nuvem que traz o poder de processamento e
-armazenamento mais próximo dos dispositivos que geram e consomem dados. Esse
-modelo é projetado para superar as limitações de latência, largura de banda e
-segurança associadas à centralização total dos recursos na nuvem. Ao distribuir
-recursos computacionais pela "névoa" – ou seja, em dispositivos locais e
-gateways próximos à borda da rede – o fog computing permite que aplicações
-sensíveis ao tempo, como sistemas de automação industrial, cidades inteligentes
-e veículos autônomos, funcionem de forma mais eficiente e responsiva. Esse
-paradigma não apenas melhora a eficiência do processamento de dados, mas também
-aumenta a resiliência e a segurança, ao minimizar a quantidade de dados que
-precisa ser transmitida para a nuvem centralizada.
+:::tip Exercício 2.10
 
-Uma implementação moderna de fog computing é encontrada no uso de "edge" com
-Next.js, um popular framework para a construção de aplicações web com React.
-Next.js facilita o desenvolvimento de aplicações full-stack, oferecendo
-funcionalidades como renderização no lado do servidor (SSR), geração estática
-(SSG) e agora, computação na borda (edge computing). A implementação de "edge"
-no Next.js permite que partes críticas do processamento da aplicação sejam
-executadas em servidores localizados mais próximos dos usuários finais, em vez
-de em data centers centralizados. Isso resulta em tempos de resposta mais
-rápidos e uma experiência de usuário mais fluida, especialmente importante para
-aplicações que exigem alta interatividade e baixa latência.
+No parágrafo acima mencionei o acrônimo *IaaS*. Pesquise o que esse acrônimo
+significa e como ele se relaciona com computação em nuvem. Aproveite e pesquise
+mais os seguintes acrônimos:
 
-No contexto do Next.js, "edge" refere-se à capacidade de executar funções
-serverless ou middleware diretamente na borda da rede, usando plataformas como
-Vercel Edge Functions. Essas funções são pequenas e otimizadas para execução
-rápida, manipulando tarefas como autenticação, roteamento de pedidos, ou
-personalização de conteúdo em tempo real. Com a computação na borda,
-desenvolvedores podem criar experiências web que respondem quase
-instantaneamente às ações do usuário, mantendo a carga nos servidores centrais
-e a latência ao mínimo. Dessa forma, a integração de edge computing com Next.js
-exemplifica como o fog computing pode ser aplicado para melhorar a performance
-e a eficiência das aplicações modernas.
+* PaaS; e
+* SaaS.
 
-## 6. Computação de borda
+:::
 
-Restou apenas uma dos paradigmas que acho interessante pontuar nesse material,
-mas esse merece uma seção separada pois é o foco do nosso módulo.
+O paradigma de computação em nuvem se destaca por oferecer soluções complexas
+sem transparecer essa complexidade para o usuário final e tipicamente em um
+modelo *pay as you go*, em que você paga apenas pelo que de fato usa.
+
+Vamos ser sinceros, vocês todos já estão viciados em computação em nuvem
+(exatamente como os nossos queridos bilionários planejaram). Eu não preciso
+ficar contando para vocês o que torna o paradigma da AWS/Azure/GCP únicos, né?
+Vamos seguir em frente!
+
+Temos mais dois paradigmas importantes para abordar:
+
+1. Computação em névoa (*Fog computing); e
+2. Computação na borda (*Edge computing).
+
+Mas essas duas são *tão* importantes para esse módulo que merecem uma seção só
+para elas, então clica ali no link da próxima seção que eu explico para você.
