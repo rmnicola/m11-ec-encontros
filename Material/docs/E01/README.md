@@ -4,7 +4,7 @@ sidebar_position: 5
 slug: /e1
 ---
 
-# Configurando e usando o ROS
+# Introdução à Computação na Borda
 
 **Encontro em 06/08/2024**
 
@@ -22,8 +22,9 @@ slug: /e1
 
 O primeiro encontro do módulo será focado em apresentar a dinâmica do módulo em
 si; o que estudaremos, como está organizado o material, quais atividades
-teremos no decorrer do módulo e como será sua correção e, por fim, qual será a
-postura do professor instrutor com relação aos desafios do projeto.
+teremos no decorrer do módulo e como será sua correção e, por fim, qual será o
+acompanhamento do projeto e seus desafios técnicos em conjunto com o professor
+instrutor.
 
 Como um segundo objetivo, será feita uma introdução ao conceito de computação
 na borda (Edge Computing) e como esse conceito conversa com outros paradigmas
@@ -33,10 +34,11 @@ paradigma em específico.
 ## 1. Preparação pré-encontro
 
 Como sempre, espera-se que o estudante faça os autoestudos **antes** do
-encontro. Isso não significa esgotar todas as atividades e exercícios propostos
-no material nem mesmo ter uma compreensão total do que está escrito nos artigos
-disponíveis, mas sim apenas ter um contato prévio com o conteúdo para que o
-encontro funcione melhor como uma discussão aberta.
+encontro. Isso não significa ter um domínio completo sobre todos os assuntos
+abordados nos autoestudos e nem mesmo fazer uma leitura profunda de cada um dos
+artigos lá dispostos. Para ter um bom aproveitamento do encontro, basta fazer
+uma primeira leitura do material e escolher alguns dos exercícios para refletir
+sobre antes do encontro.
 
 Sugere-se que o estudante separe um tempo após o consumo do material de
 autoestudo para considerar as seguintes **questões centrais do encontro**:
