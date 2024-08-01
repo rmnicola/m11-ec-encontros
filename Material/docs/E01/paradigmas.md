@@ -6,18 +6,67 @@ sidebar_class_name: autoestudo
 
 # Paradigmas de computação
 
+Na seção antrior estabelecemos que, após a construção do ENIAC, começamos uma
+era da computação em que os avanços eram exponenciais. Se você fizer um recorte
+de cada uma das décadas desde os anos 40 até os anos 2020, a computação vai ter
+uma cara radicalmente diferente em cada uma dessas décadas. Em alguns casos, há
+mais de uma revolução dentro da mesma década.
+
+Seres humanos adoram esconder conceitos complexos por trás de abstrações. É por
+isso que temos a tendência a categorizar tudo. É natural que um assunto tão
+complexo e com uma história tão rica quanto a computação também seja dividido
+em seções. Onde quero chegar com isso? Quero chegar em uma das maneiras mais
+comuns de se dividir/seccionar a computação é pensando em diferentes
+**paradigmas**.
+
 ## 1. Computação sequencial
 
-A computação sequencial é o paradigma computacional mais simples e intuitivo
-entre os aqui dispostos. Esse paradigma é tão intuitivo, que ele nasceu antes
-mesmo do primeiro computador com memória e CPU.
+Essa seção pode começar e acabar bem rápido com: é o paradigma mais antigo e o
+que você está acostumado a fazer desde que fez o seu primeiro programa. Uma
+sequência de passos traduzida em uma série de comandos que são executados
+sequencialmente e em um núcleo computacional apenas. Por mais que hoje existam
+paradigmas muito mais complexos, a maioria esmagadora das soluções
+computacionais vive aqui. E tem um bom motivo: funciona, e funciona bem. Se
+você não esbarrou em uma das limitações da programação sequencial, in loco e em
+um único núcleo, então deveria ficar onde está. É fácil, sem confusão e tem
+bolo.
+
+<img 
+  src="https://bitismyth.wordpress.com/wp-content/uploads/2012/07/portal-cake.png"
+  alt="Bolo"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '30vh',
+    marginRight: 'auto'
+  }} 
+/>
+<br/>
+<p><center>Fig 2.01 - O bolo.</center></p>
+
+Eu disse que a seção *pode* começar e acabar bem rápido, não que *vai*. Vou
+aproveitar aqui para contar um pouco mais de história, afinal esse paradigma é
+tão intuitivo, mas **tão** intuitivo que ele surgiu antes mesmo do primeiro
+computador.
 
 Na seção anterior eu mencionei o projeto de Charles Babbage, o motor analítico. 
 O que eu não mencionei é que o projeto de Babbage era tão complexo que foi
 necessário documentar claramente como operar o equipamento em termos de input e
-operações possíveis. O que isso significa? Que o computador de Babbage foi o
-primeiro a ter um **instruction set** (não se preocupe se não souber exatamente
-o que isso significa, vamos voltar nesse assunto em breve).
+operações possíveis. Efetivamente Charles Babbage criou o primeiro conjunto de
+*microcode* da história. Claro, era um microcode puramente mecânico e bastante
+limitado. Está confuso? Não sabe o que é microcode? Tá na hora de você
+trabalhar um pouquinho...
+
+:::tip Exercício 2.01
+
+Pesquise o que é microcode e qual a diferença do microcode para a
+microarquitetura e o *instruction set* de um processador. Considere a afirmação
+(minha) de que a diferença entre os dois é fundamental para que seja possível
+programar uma quantidade enorme de dispositivos computacionais de forma
+homogênea. Por que eu fiz essa afirmação? Apoie-se na diferença entre
+microarquitetura, instruction set e microcode para fazer sua resposta.
+
+:::
 
 Ok, mas o que isso tem a ver com a computação sequencial? Bom, em 1843, uma
 colega matemática de Babbage escreveu em suas anotações uma sequência de
@@ -66,6 +115,10 @@ de von neumann**.
   }} 
 />
 <br/>
+<p><center>Fig 2.02 - John Von Neumann foi um dos cientistas da computação mais
+famosos e influentes da história. Muitos dos conceitos que hoje são
+fundamentais para a computação moderna surgiram de definições propostas por
+ele. Uma delas é a arquitetura básica de um microprocessador.</center></p>
 
 Junto com essa arquitetura e o paradigma sequencial, surge também a **Lei de
 Moore**. A lei de Moore vem de uma observação feita por Gordon Moore em seu
@@ -73,11 +126,27 @@ artigo de 1965, *Cramming more components onto integrated circuits*. Moore
 notou que havia uma tendência em que a densidade de transistores em
 processadores dobrava a cada 1.5 anos.
 
+
+<img 
+  src="https://www.tf.uni-kiel.de/matwis/amat/semitech_en/kap_5/illustr/moore_law.png"
+  alt="Lei de Moore"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '40vh',
+    marginRight: 'auto'
+  }} 
+/>
+<br/>
+<p><center>Fig 2.03 - A Lei de Moore no mundo real, com processadore da
+*Intel*. Décadas após a observação de Gordon Moore, o mundo continuava vendo o
+crescimento exponencial de densidade de transistores. Até que...</center></p>
+
 A figura que estou pintando aqui é de um mundo novo e em franca expansão; as
-possibilidades eram quase infindáveis quase nenhuma havia sido explorada. Havia
-uma arquitetura nova que fazia com que programar computadores deixasse de ser
-uma tarefa exclusiva para os matemáticos envolvidos na criação das primeiras
-máquinas. Havia até uma tendência de aproximadamente dobrar o poder
+possibilidades eram quase infindáveis e quase nenhuma havia sido explorada.
+Havia uma arquitetura nova que fazia com que programar computadores deixasse de
+ser uma tarefa exclusiva para os matemáticos envolvidos na criação das
+primeiras máquinas. Havia até uma tendência de aproximadamente dobrar o poder
 computacional a cada 2 anos, fazendo com que novas possibilidades surgissem
 mais rápido do que os entusiastas e pesquisadores conseguiam explorá-las.
 Basicamente, o que houve a partir dos anos 60 foi uma era de ouro da
@@ -96,6 +165,7 @@ Todos sabemos como termina a era de ouro, certo?
   }} 
 />
 <br/>
+<p><center>Fig 2.04 - I sacricife.</center></p>
 
 ## 2. Computação paralela
 
@@ -108,14 +178,36 @@ frase realmente ganhou tração foi no começo dos anos 2000 (detalhe inútil: e
 já estava usando/montando computadores nessa época com meus 10 anos de idade e
 meus 13 disquetes para instalar o Windows 95 =D).
 
+<img 
+  src="https://media.licdn.com/dms/image/D5622AQGklQBRU3EyAA/feedshare-shrink_800/0/1708009270479?e=2147483647&v=beta&t=j9tnEopwWM3pi3DHiQdD6nFJc431ooMxkzK96tbBT7U"
+  alt="Moore's Law is Dead"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '70vh',
+    marginRight: 'auto'
+  }} 
+/>
+<br/>
+<p><center>Fig 2.05 - O fim da Lei de Moore "acontecendo" em vários momentos da
+história.</center></p>
+
 De fato parecia que finalmente o ritmo frenético de evolução das CPUs iria
-frear um pouco, até que em meados dos anos 2000 surgiu a resposta para o
+frear um pouco. Tudo indicava que o ritmo frenético de evolução dos últimos 40
+anos finalmente estava chegando em um plateau. Acabou, vamos todos respirar
+agora e tirar o máximo desses dispositivos que agora, finalmente, vão parar de
+evoluir tão rápido. Certo? Errado! Se tem uma coisa que a história da ciência
+nos ensina é que ~não sabemos nada sobre a infindável malícia dentro do coração
+humano~ nunca se deve duvidar da nossa capacidade de inovação. 
+
+**Entra a computação paralela**. Em meados dos anos 2000 surgiu a resposta para o
 problema; se não dá mais para dobrar a densidade de transistores a cada 2 anos,
 que tal dobrar a quantidade de processadores por chip? E foi assim que surgiram
 duas CPUs muito importantes para um novo paradigma de computação:
 
-1. Intel Pentium Extreme 840 (no ano seguinte introduziram uma arquitetura
-   muito similar para o mercado além das workstations, o Pentium D~isastre~); e
+1. Intel Pentium Extreme 840 (chip da família de workstations - Xeon - que
+   depois teve sua contrapartida para o consumidor final, o Pentium
+   D~isastre~); e
 2. Atlhon 64 x2.
 
 Assim como curiosamente acontece hoje, naquela época a AMD ficou muito à frente
@@ -136,6 +228,8 @@ de forma simplificada essa escolha de arquitetura da AMD.
   }} 
 />
 <br/>
+<p><center>Fig 2.06 - Arquitetura simplificada do lendário Atlhon 64 x2, chip
+fabricado pela AMD.</center></p>
 
 Enquanto isso, a Intel contava com um Bus de relativa baixa performance para a
 comunicação entre dois núcleos totalmente separados. A imagem abaixo
@@ -152,23 +246,32 @@ exemplifica essa escolha.
   }} 
 />
 <br/>
+<p><center>Fig 2.07 - Enquanto isso, no lado azul tinhamos o Pentium D. Esse
+chip era o mais próximo possível de simplesmente dois Pentium 4 colocados um em
+cima do outro. O problema? O Pentium 4 já era notóriamente **quente**. Com 130W
+de TDP, o Pentium D era uma boa alternativa para as casas norte americanas sem
+calefação central.</center></p>
 
-A decisão da AMD se mostrou muito mais acertada e norteou a arquitetura que
-hoje é padrão para CPUs multicore, em que há um nível (ou mais) de cache
-compartilhado por mais de um núcleo após o cache L2. Hoje em dia chamamos esse
-de cache L3.
+:::tip Exercício 2.02
 
-<img 
-  src="https://software.rajivprab.com/wp-content/uploads/2019/07/cache.png"
-  alt="Cache L3"
-  style={{ 
-    display: 'block',
-    marginLeft: 'auto',
-    maxHeight: '70vh',
-    marginRight: 'auto'
-  }} 
-/>
-<br/>
+Eu deixei bem claro que considero que a AMD tomou a decisão mais acertada, mas
+você como bom estudante sabe que deve confiar no seu professor, mas verificar o
+que ele fala. Pesquise diagramas de arquitetura de CPUs mais modernas e compare
+com as arquiteturas apresentadas nas figuras acima. O que é possível notar em
+comum, principalmente se focarmos no acesso à memória por cada núcleo? Na sua
+opinião, os chips modernos tem mais em comum com o Atlhon 64 x2 ou com o
+Pentium D 840?
+
+:::
+
+:::tip Exercício 2.03
+
+Vamos de ciências térmicas? O que significa TDP? Pesquise o termo e responda
+qual é a diferença entre o TDP e a potência de consumo de um componente
+eletrônico. Como se calcula TDP?
+
+:::
+
 
 Por quê entrei nessa tangente para falar do paradigma de computação paralela?
 Pois acesso compartilhado a memória é **O** assunto mais importante quando
@@ -176,13 +279,47 @@ falamos de paralelismo (ou sistemas distribuídos).
 
 ### 2.1. Taxonomia de Flynn
 
-Dentro do paradigma de computação paralela, surgem alguns acrônimos
-importantes a partir do que chamamos de taxonomia de Flynn.
+Para esta seção, permitam-me ~roubar~ citar um conteúdo diretamente da
+Wikipedia:
+
+> Taxonomia (do grego antigo τάξις, táxis, "arranjo" e νομία, nomia, "método")
+> é a disciplina biológica que define os grupos de organismos biológicos com base
+> em características comuns e dá nomes a esses grupos. Para cada grupo, é dada
+> uma nota. Os grupos podem ser agregados para formar um supergrupo de maior
+> pontuação, criando uma classificação hierárquica.
+
+A pergunta que deve estar na sua cabeça agora é: quem é Flynn e por que ele tem
+uma taxonomia. Ou, talvez: o que diabos grupos de organismos biológicos tem a
+ver com computação. Ou, possivelmente: quem é o *mesmo* que a plaquinha do
+elevador fica ameaçando de estar no mesmo andar que eu?
+
+Se você teve alguma dessas dúvidas, relaxa que eu vou te ajudar agora!
+
+Michal J. Flynn é um professor emérito de Stanford que foi membro fundador e
+primeiro *chairman* do comitê técnico sobre arquitetura computacional da *IEE
+Computer Society*. Em 1966, Flynn propos um método para classificar a
+computação digital paralela. Esse método ficou conhecido como a Taxonomia de
+Flynn.
+
+Beleza, mas por quê *taxonomia*? Pegue a definição de taxonomia e omita os
+termos "biológica" ou "biológicos". Pronto, tá aí.
+
+E o *mesmo*? Sei lá, melhor continuar tomando cuidado.
+
+Legal, mas o que diz a **Taxonomia de Flynn**?
+
+Ela divide os tipos de tarefa de computação digital em quatro tipos:
+
+1. Single instruction stream, single data stream (SISD)
+2. Single instruction stream, multiple data stream (SIMD)
+3. Multiple instruction stream, single data stream (MISD) e
+4. Mulitple instruction stream, multiple data stream (MIMD)
+
+Vamos explorar individualmente cada uma delas? 
+
+Foi uma pergunta retórica. Vamos.
 
 **Single instruction, single data (SISD)**
-
-Aqui é basicamente a denominação para o paradigma sequencial. Há apenas um
-stream de informação e apenas um stream de instruções.
 
 <img 
   src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/SISD.svg/1024px-SISD.svg.png"
@@ -195,18 +332,28 @@ stream de informação e apenas um stream de instruções.
   }} 
 />
 <br/>
+<p><center>Fig 2.08 - Uma arquitetura SISD é marcada por ter apenas um conjunto
+de instruções para serem executadas em apenas um fluxo de entrada de
+dados.</center></p>
+
+Vendo a imagem acima e a sua descrição já deve deixar claro que o SISD nada
+mais é do que a denominação da computação sequencial dentro da taxonomia de
+Flynn. O que vou aproveitar para ressaltar aqui é que essa taxonomia foca em
+duas coisas:
+
+1. Quantos fluxos de entrada de dados o sistema tem?
+2. Quantas instruções distintas em paralelo o sistema é capaz de executar?
+
+Essas são as duas perguntas essenciais para essa taxonomia.
+
+:::tip Exercício 2.04 
+
+Considerando a arquitetura SISD disposta acima, cite um exemplo de arquitetura
+computacional/dispositivo que exemplifica esse tipo de arquitetura.
+
+:::
 
 **Single instruction, multiple data (SIMD)**
-
-Aqui já temos o primeiro exemplo de paralelismo. A situação do SIMD é quando
-temos apenas uma instrução que deve ser executada para diversos dados
-separadamente. Ou seja, o problema precisa estar disposto de uma forma que a
-mesma operação deve ser feita para todos os dados envolvidos. Esse tipo de
-operação é muito comum na álgebra linear (vetores/tensores). Um exemplo de
-hardware moderno que funciona dessa forma é a GPU. Um exemplo de aplicação é
-para deep learning. Sistemas SIMD são tipicamente o que chamamos de
-*embarrasingly parallel* e são o santo graal do paralelismo. O problema é que
-nem todos os problemas computacionais podem ser vetorizados.
 
 <img 
   src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/SIMD2.svg/220px-SIMD2.svg.png"
@@ -219,15 +366,26 @@ nem todos os problemas computacionais podem ser vetorizados.
   }} 
 />
 <br/>
+<p><center>Fig 2.09 - A arquitetura SIMD é marcada por continuar com um único
+fluxo de instruções, mas agora contamos com múltiplos fluxo de
+dados.</center></p>
+
+Este é o primeiro exemplo de arquitetura paralela possível. Temos uma única
+instrução que pode ser aplicada para diversos fluxos de dados heterogêneos.
+Quando pensamos onde esse tipo de situação pode existir, caímos imediatamente
+no mundo da álgebra linear com vetores, matrizes e tensores. Tendo isso em
+vista, vamos para mais um exercício?
+
+:::tip Exercício 2.05
+
+Considerando a arquitetura SIMD disposta acima, cite um exemplo de arquitetura
+computacional/dispositivo que exemplifica esse tipo de arquitetura. Além disso,
+cite uma aplicação que se beneficia amplamente deste tipo de arquitetura.
+
+:::
+
 
 **Multiple instruction, single data (MISD)**
-
-Esse é um tipo de arquitetura paralela menos usual. Aqui temos apenas uma
-entrada de dados e mais de uma operação em unidades computacionais diferentes.
-Esse tipo de paralelismo não tem ganho algum de performance, por isso é pouco
-usual. O ganho aqui é de segurança. Em sistemas em que a falha é absolutamente
-inaceitável, é comum ter dois processadores trabalhando com o mesmo stream de
-dados para replicação de tarefas e validação dos resultados.
 
 <img 
   src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/MISD.svg/1024px-MISD.svg.png"
@@ -240,6 +398,21 @@ dados para replicação de tarefas e validação dos resultados.
   }} 
 />
 <br/>
+<p><center>Fig 2.10 - A arquitetura MISD é menos usual. Nela, há apenas um
+fluxo de dados para múltiplos fluxos de instruções.</center></p>
+
+O MISD é um pokémon mais difícil de encontrar em campo. Tesmo apenas uma
+entrada de dados e mais de uma operação com instruções distintas em unidades
+computacionais diferentes. Esse tipo de paralelismo obviamente não tem ganho
+algum de performance. O que isso significa? Que você vai ter que pesquisar
+agora por que diabos essa arquitetura existe =D
+
+:::tip Exercício 2.06
+
+Qual é a razão de existir da arquitetura MISD? Em que tipo de situação ela é
+vantajosa? Cite exemplos.
+
+:::
 
 **Multiple instruction, multiple data (MIMD)**
 
