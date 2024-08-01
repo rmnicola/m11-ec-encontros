@@ -250,7 +250,9 @@ exemplifica essa escolha.
 chip era o mais próximo possível de simplesmente dois Pentium 4 colocados um em
 cima do outro. O problema? O Pentium 4 já era notóriamente **quente**. Com 130W
 de TDP, o Pentium D era uma boa alternativa para as casas norte americanas sem
-calefação central.</center></p>
+calefação central. Adiciona a essa receita um overhead significativo para
+transmissão de dados entre os núcleos e temos a receita do Pentium
+Disastre.</center></p>
 
 :::tip Exercício 2.02
 
@@ -416,16 +418,6 @@ vantajosa? Cite exemplos.
 
 **Multiple instruction, multiple data (MIMD)**
 
-Por fim, chegamos no tipo de paralelismo comum às CPUs (e, portanto, o tipo de
-paralelismo mais acessível e comum para a maioria dos desenvolvedores). Aqui
-temos várias unidades computacionais independentes, executando instruções
-diferentes com dados diferentes. De fato, se pensarmos nos núcleos de uma CPU,
-é exatamente assim que funciona. Esse tipo de paralelismo é **extremamente
-influenciado** pelo tipo de **compartilhamento de memória**. Mesmo que cada
-núcleo funcione como uma unidade separada, é muito comum precisar consolidar
-todos os dados processados para finalizar o programa. Aqui chegamos ao conceito
-de **sistemas com memória compartilhada** e **sistemas com memória
-distribuída**.
 
 <img 
   src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/MIMD.svg/1024px-MIMD.svg.png"
@@ -438,41 +430,57 @@ distribuída**.
   }} 
 />
 <br/>
+<p><center>Fig 2.11 - A arquitetura MIMD é a mais versátil, mas também a mais
+complexa para se trabalhar. Nela, temos múltiplos fluxos de dados e também
+múltiplas unidades computacionais com capacidade de executar instruções
+heterogêneas.</center></p>
 
-### 2.2. Sistemas com memória compartilhada
+Por fim, chegamos no tipo de paralelismo comum às CPUs (e, portanto, o tipo de
+paralelismo mais acessível e comum para a maioria dos desenvolvedores). Aqui
+temos várias unidades computacionais independentes, executando instruções
+diferentes com dados diferentes. De fato, se pensarmos nos núcleos de uma CPU,
+é exatamente assim que funciona. Esse tipo de paralelismo é **extremamente
+influenciado** pelo tipo de **compartilhamento de memória**. Mesmo que cada
+núcleo funcione como uma unidade separada, é muito comum precisar consolidar
+todos os dados processados para finalizar o programa.
 
-Sistemas com memória compartilhada são arquiteturas de computadores onde
-múltiplos processadores acessam um espaço de memória comum. Eles são amplamente
-utilizados para facilitar o paralelismo, permitindo que diferentes partes de um
-programa sejam executadas simultaneamente em diferentes processadores. Duas
-arquiteturas principais de memória compartilhada são UMA (Uniform Memory
-Access) e NUMA (Non-Uniform Memory Access). No sistema UMA, todos os
-processadores têm tempos de acesso idênticos à memória, o que simplifica a
-programação, mas pode levar a gargalos devido à competição pelo mesmo recurso
-de memória. Em contraste, sistemas NUMA distribuem a memória fisicamente em
-várias localidades próximas a diferentes processadores. Embora isso melhore a
-escalabilidade e reduza a contenção, o tempo de acesso à memória varia
-dependendo da localização do processador e do bloco de memória em questão,
-introduzindo complexidade na otimização do desempenho. Uma das ferramentas mais
-importantes para o desenvolvimento de algoritmos em sistemas com memória
-compartilhada é o OpenMP.
+### 2.2. Considerações sobre memória
 
-O OpenMP (Open Multi-Processing) é uma API amplamente utilizada para
-programação paralela em sistemas com memória compartilhada, como UMA e NUMA.
-Com o OpenMP, desenvolvedores podem adicionar diretivas ao código em C, C++ e
-Fortran para especificar quais partes do programa devem ser executadas em
-paralelo. Em sistemas UMA, o OpenMP permite uma implementação relativamente
-direta de paralelismo, já que todos os processadores têm acesso igual à
-memória. No entanto, em sistemas NUMA, a eficiência do OpenMP depende de uma
-boa gestão da afinidade do processador e da localização da memória, para
-minimizar o impacto dos tempos de acesso variáveis. Assim, o OpenMP oferece
-ferramentas para controlar a distribuição de tarefas e dados, permitindo que
-programadores tirem vantagem da arquitetura subjacente e maximizem a
-performance do sistema.
+Voltando para a comparação entre o Atlhon x2 e o Pentium D, percebemos que o
+fator que sacramentou a vitória do Atlhon x2 (será? Você já fez o exercício
+2.02?) não foi uma frequência maior ou uma quantidade de operações por ciclo
+maior, mas sim como se dava o **compartilhamento de memória** entre os núcleos.
+
+Em outras palavras, é possível afirmar que **como você usa a memória** é um
+fator que pode viabilizar ou não a computação em paralelo. Preste atenção pois
+a próxima frase é importante. Vou até colocar em um admonition, olha só quão
+importante é:
+
+:::warning VERY IMPORTANT!! MUY IMPORTANTE!! 
+
+Não existe a menor possibilidade de um sistema de computação paralela ter
+absolutamente zero overhead. Sendo assim, se aventurar na computação paralela
+sem uma real necessidade significa **jogar performance no lixo**.
+
+:::
+
+Vamos falar sobre as principais classificações a respeito do uso de memória na
+computação paralela? Aqui basicamente temos sistemas de **memória
+compartilhada**, sistemas de **memória distribuída**, sistemas com **acesso
+uniforme à memória** e sistemas com **acesso não uniforme à memória**.
+
+**Memória compartilhada vs memória distribuída**
+
+Essa dicotomia trata sobre como as diferentes unidades computacionais acessam a
+memória e podem compartilhar (ou não) as variáveis que dizem respeito ao
+algoritmo a ser executado. Existem duas possibilidades aqui: ou todas as
+unidades computacionais acessam o mesmo recurso de memória ou a memória é
+distribuída, sem que as unidades computacionais consigam acessar os mesmos
+engereços.
 
 <img 
   src="https://ars.els-cdn.com/content/image/1-s2.0-B9780124080898000033-f03-04-9780124080898.jpg"
-  alt="UMANUMANUMAEH"
+  alt="Memória compartilhada vs memória distribuída"
   style={{ 
     display: 'block',
     marginLeft: 'auto',
@@ -481,36 +489,35 @@ performance do sistema.
   }} 
 />
 <br/>
+<p><center>Fig 2.12 - Em a), temos um sistema cuja memória é compartilhada.
+Isso significa que todas as unidades computacionais acessam o mesmo recurso de
+memória. Em b), temos um sistema com memória distribuída. Isso significa que há
+unidades computacionais que não conseguem acessar os mesmos endereços de
+memória.</center></p>
 
-### 2.3. Sistemas com memória distribuída
+:::tip Exercício 2.07
 
-Sistemas com memória distribuída são arquiteturas de computadores onde cada
-processador possui sua própria memória local e os processadores se comunicam
-entre si através de uma rede de interconexão. Essa abordagem é comum em
-clusters de computadores e supercomputadores, onde a escalabilidade é uma
-necessidade crítica. Em contraste com sistemas de memória compartilhada, onde
-todos os processadores acessam o mesmo espaço de memória, em sistemas de
-memória distribuída, os processadores não compartilham a memória física, o que
-elimina a contenção por recursos de memória. No entanto, isso requer que os
-dados sejam explicitamente passados entre processadores, geralmente através de
-operações de envio e recebimento de mensagens, introduzindo desafios na
-programação e na coordenação de tarefas.
+Considerando sistemas com memória compartilhada e sistemas com memória
+distribuída, cite ao menos um ponto positivo e um ponto negativo para cada um
+desses tipos de sistema. Considere a capacidade do sistema de ter coerência de
+dados (se não souber o que isso significa, pesquise o termo) e a possibilidade
+de conflitos de manipulação de dados (o termo chave aqui é race condition).
 
-O MPI (Message Passing Interface) é a API padrão para programação paralela em
-sistemas com memória distribuída. MPI permite que desenvolvedores escrevam
-programas paralelos onde os processadores comunicam-se através de troca de
-mensagens, coordenando a execução e o compartilhamento de dados. Com MPI, os
-programadores têm controle explícito sobre a comunicação entre processos,
-permitindo a otimização fina do desempenho do sistema. As funções MPI incluem
-envio e recepção de mensagens, operações coletivas como broadcast e redução, e
-sincronização de processos. Embora a programação com MPI possa ser mais
-complexa do que com APIs para memória compartilhada como OpenMP, ela oferece a
-flexibilidade necessária para maximizar a eficiência em arquiteturas
-distribuídas. Essa abordagem é particularmente eficaz em ambientes de alto
-desempenho, onde a latência da comunicação e a banda larga da rede são fatores
-críticos para o desempenho geral do sistema.
+:::
 
-<img 
+**Acesso uniforme vs acesso não uniforme**
+
+Efetivamente aqui temos o tipo mais comum de sistema de computação paralelo que
+vamos encontrar por aí na natureza; o sistema com acesso não uniforme à
+memória. O fato é que sistemas computacionais costumam ter heterogeneidade com
+relação ao acesso à memória. Isso significa que assim que o problema escalar
+para um nível em que precisamos de mais de um computador, caímos no sistema com
+acesso não uniforme. Isso não é exatamente uma boa coisa, pois é muito mais
+complexo lidar com essa falta de uniformidade. No entanto, o custo atrelado à
+escalabilidade de um sistema puramente uniforme é proibitivo. Fazemos o melhor
+com aquilo que temos.
+
+<img
   src="https://www.researchgate.net/publication/309652802/figure/fig7/AS:669409957904393@1536611179704/Uniform-left-vs-non-uniform-right-memory-access-models.png"
   alt="Distributed memory system"
   style={{ 
@@ -521,6 +528,12 @@ críticos para o desempenho geral do sistema.
   }} 
 />
 <br/>
+<p><center>Fig 2.13 - À esquerda, temos um sistema cujo acesso à memória é
+uniforme. Isso significa que ou todas as unidades computacionais vão ter acesso
+compartilhado à memória ou todas as unidades computacionais vão ter acesso à
+sua própria memória. Já à direita, temos um exemplo de acesso não-uniforme. O
+que isso significa? Que no mesmo sistema temos tanto acesso compartilhado
+quanto acesso distribuído pelas unidades computacionais.</center></p>
 
 ## 3. Computação distribuída
 
