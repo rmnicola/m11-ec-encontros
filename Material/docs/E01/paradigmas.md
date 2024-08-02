@@ -165,7 +165,7 @@ Todos sabemos como termina a era de ouro, certo?
   }} 
 />
 <br/>
-<p><center>Fig 2.04 - I sacricife.</center></p>
+<p><center>Fig 2.04 - I sacrifice.</center></p>
 
 ## 2. Computação paralela
 
