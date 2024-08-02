@@ -9,7 +9,7 @@ const config: Config = {
   favicon: 'icons/inteli.svg',
 
   url: 'https://rmnicola.github.io',
-  baseUrl: '/m11-ec-encontros/',
+  baseUrl: '/',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
