@@ -4,6 +4,8 @@ sidebar_position: 4
 sidebar_class_name: autoestudo
 ---
 
+import SamePicture from '@site/static/img/samepicture.jpg';
+
 # Introdução à computação na borda
 
 Continuando nossa jornada pelos principais paradigmas de computação, chegamos
@@ -201,8 +203,8 @@ o paradigma de Edge computing.</center></p>
 Pera...
 
 <img 
-  src="img/samepicture.jpg"
-  alt="Edge computing"
+  src={SamePicture}
+  alt="They're the same picture"
   style={{ 
     display: 'block',
     marginLeft: 'auto',
@@ -211,149 +213,94 @@ Pera...
   }} 
 />
 <br/>
-<p><center>Fig 3.03 - A arquitetura simplificada de um sistema que funciona com
-o paradigma de Edge computing.</center></p>
+<p><center>Fig 3.04 - They're the same picture.</center></p>
 
+O diagrama *não tem diferença* **nenhuma**? Pois é... Por isso que a "confusão"
+entre fog computing e edge computing é absolutamente natural. Cá entre nós, eu
+até entendo querer diferenciar as duas coisas, mas eu tô mais do lado de quem
+chama tudo de edge de forma indiscriminada.
 
+Tá, mas tem alguma diferença? Tem. Edge computing vai um pouco além de Fog
+computing. A pergunte relevante aqui é *por que não utilizar logo o dispositivo
+na terminação da rede para fazer a computação*. Em muitos casos essa pergunta
+trás uma resposta positiva.
 
+:::info Autoestudo obrigatório
 
+<div style={{ textAlign: 'center' }}>
+    <iframe 
+        style={{
+            display: 'block',
+            margin: 'auto',
+            width: '100%',
+            height: '50vh',
+        }}
+        src="https://www.youtube.com/embed/3hScMLH7B4o" 
+        frameborder="0" 
+        allowFullScreen>
+    </iframe>
+</div>
 
-Edge computing é um paradigma de tecnologia que desloca o processamento e a
-análise de dados para mais próximo do local onde eles são gerados, ao invés de
-depender de data centers centralizados. Este método é especialmente útil em
-cenários onde a latência precisa ser mínima para garantir a eficácia e
-segurança dos processos. Por exemplo, em veículos autônomos, a necessidade de
-tomar decisões em frações de segundo torna inviável depender de um data center
-remoto para processar informações críticas, como dados de sensores e câmeras.
-Da mesma forma, em sistemas de monitoramento de saúde, uma resposta rápida pode
-ser a diferença entre vida e morte, especialmente em monitoramento remoto de
-condições de pacientes.
+:::
 
-Além disso, em aplicações industriais de IoT, como controle de equipamentos em
-fábricas ou monitoramento de infraestrutura, a edge computing permite que
-análises e decisões sejam feitas localmente, evitando possíveis problemas de
-latência e conectividade. Ao processar dados na borda, é possível filtrar e
-agregar informações de maneira mais eficiente, enviando apenas os dados mais
-relevantes para a nuvem, o que reduz significativamente o tráfego na rede e os
-custos associados.
+Na verdade, para poder criar um sistema coeso em que parte da computação é
+feita no dispositivo final, é bastante comum que a técnica de ter um mini
+servidor ou *cloudlet* em uma camada intermediária entre o dispositivo e a
+nuvem. Sendo assim, quando temos processamento no dispositivo, geralmente
+tempos ao mesmo tempo *fog computing* e *edge computing* ~só pra coisa ficar
+ainda mais confusa~.
 
-### 2.1. Device Layer
+:::tip Exercício 3.03
 
-A Device Layer, ou camada de dispositivos, é a primeira linha de coleta e
-consumo de dados na arquitetura de edge computing. Esta camada é composta por
-uma variedade de dispositivos conectados, como sensores, atuadores, câmeras,
-smartphones e veículos autônomos. Esses dispositivos são responsáveis pela
-coleta de dados do ambiente, como temperatura, pressão, imagens e movimentos,
-entre outros.
+Rá! Paradigma secreto desbloqueado... quase. Esse é o seu trabalho. Você pensou
+que eu ia falar do nada de *cloudlet* e ia ficar por isso mesmo? Pode ir lá
+pesquisar o que isso significa que eu te espero aqui para continuar.
 
-Além da coleta de dados, muitos desses dispositivos têm capacidade de
-processamento embutida, permitindo a execução de algoritmos de análise básica.
-Isso inclui a filtragem de ruído, pré-processamento de dados e detecção de
-eventos simples. Essa capacidade de processamento local é crucial para reduzir
-o volume de dados que precisa ser transmitido para outras camadas, como a Edge
-Layer ou a Cloud Layer, especialmente em situações onde a largura de banda é
-limitada ou os dados são sensíveis e precisam ser mantidos localmente para
-garantir a privacidade e segurança.
+:::
 
-### 2.2. Edge Layer
+Quando falamos de edge computing, geralmente existe uma separação bem clara de
+*camadas*. São elas:
 
-O Edge Layer é a camada intermediária na arquitetura de edge computing, onde
-ocorre a maior parte do processamento intensivo de dados e análise local. Esta
-camada inclui dispositivos como gateways inteligentes, servidores de borda e
-micro data centers. Esses dispositivos são geralmente localizados próximos aos
-dispositivos da Device Layer e são responsáveis por tarefas mais complexas de
-processamento de dados.
-
-No Edge Layer, é comum realizar filtragem, agregação de dados, análise avançada
-e, em alguns casos, armazenamento temporário. Por exemplo, em um sistema de
-vigilância por vídeo, as câmeras podem enviar feeds de vídeo para servidores de
-borda que analisam as imagens em tempo real para detectar atividades suspeitas.
-Somente os dados relevantes, como eventos de segurança, são transmitidos para a
-nuvem para análise posterior ou armazenamento de longo prazo.
-
-Essa camada também é crítica para a tomada de decisões em tempo real. A
-proximidade do Edge Layer aos dispositivos de origem dos dados permite uma
-resposta rápida, essencial em muitas aplicações como controle de tráfego em
-cidades inteligentes, gerenciamento de ativos industriais e até mesmo em
-serviços de emergência.
-
-### 2.3. Cloud Layer
-
-A Cloud Layer, ou camada de nuvem, continua a desempenhar um papel fundamental
-na arquitetura de edge computing. Embora muitas das operações sejam realizadas
-localmente na borda, a nuvem é responsável por fornecer recursos adicionais de
-processamento, armazenamento e análise que podem não ser práticos de
-implementar na borda.
-
-Esta camada oferece escalabilidade e capacidade para realizar processamento de
-dados em larga escala, armazenamento de longo prazo e análises complexas que
-não exigem respostas imediatas. Por exemplo, dados coletados e processados na
-borda podem ser enviados para a nuvem para análises mais profundas, como
-aprendizado de máquina ou mineração de dados, que requerem maior poder de
-computação.
-
-Além disso, a nuvem serve como um ponto central para integrar dados de várias
-bordas, proporcionando uma visão global e unificada de todas as operações. Isso
-é particularmente útil para empresas que operam em vários locais ou precisam
-consolidar dados de diferentes fontes para uma análise mais abrangente. A
-combinação de edge computing e cloud computing cria uma abordagem híbrida, onde
-as vantagens de uma resposta rápida e local são complementadas pelo poder e
-flexibilidade da nuvem centralizada, oferecendo uma solução robusta e eficiente
-para uma ampla gama de aplicações.
+1. **Device layer** - é a camada mais próxima dos dados e do usuário. Carros,
+   robôs, smartphones, dispositivos IoT. Essa é a camada mais heterogênea e
+   tipicamente a que tem o menor recurso computacional. Trazer o processamento
+   para essa camada é um desafio que requer um conhecimento de hardware mais
+   aprofundado, principalmente quando trata-se de processamento de inteligência
+   artificial.
+2. **Edge Layer** - é uma camada intermediária e onde acontece boa parte do
+   processamento de dados e análise local. Esta camada inclui dispositivos como
+   gateways inteligentes, servidores de borda e micro data centers. Esses
+   dispositivos são geralmente localizados próximos aos dispositivos da Device
+   Layer e são responsáveis por tarefas mais complexas de processamento de
+   dados. No Edge Layer, é comum realizar filtragem, agregação de dados,
+   análise avançada e, em alguns casos, armazenamento temporário.
+3. **Cloud layer** - essa é a camada que estamos acostumados a lidar quando
+   trabalhamos com o já prevalente paradigma de cloud computing. Embora muitas
+   das operações sejam realizadas localmente na borda, a nuvem é responsável
+   por fornecer recursos adicionais de processamento, armazenamento e análise
+   que podem não ser práticos de implementar na borda.
 
 ## 6. Quando usar edge computing
 
-A edge computing é especialmente útil em situações onde a latência, a largura
-de banda, a privacidade dos dados, a confiabilidade e a autonomia do sistema
-são fatores críticos. Aqui estão alguns cenários específicos em que a edge
-computing é vantajosa:
+Esse é um assunto que vou querer discutir com vocês em sala de aula. Sendo
+assim, adivinha? Vai virar exercício para vocês fazerem antes do encontro.
 
-### 6.1. Baixa Latência
+:::tip Exercício 3.04
 
-Aplicações que requerem tempos de resposta rápidos, como veículos autônomos,
-robótica industrial e realidade aumentada, se beneficiam enormemente da edge
-computing. Nestes casos, qualquer atraso na transmissão de dados pode levar a
-falhas no sistema ou comprometer a segurança. Ao processar dados localmente, a
-edge computing minimiza a latência, permitindo que decisões sejam tomadas quase
-instantaneamente.
+Tendo em vista o que foi apresentado aqui sobre Edge Computing e o que você
+encontrou em sua pesquisa independente, faça considerações sobre vantagens e
+desvantagens desse paradigma no que diz respeito aos seguintes quesitos:
 
-### 6.2. Limitações de Largura de Banda
+a) Latência;
 
-Em ambientes onde a conectividade de rede é limitada ou os custos de
-transmissão de dados são altos, como em áreas rurais ou em alto mar, a edge
-computing pode ser uma solução eficiente. Processar e filtrar dados na borda
-reduz a quantidade de informações que precisa ser enviada para a nuvem,
-economizando largura de banda e custos associados.
+b) Largura e utilização de banda;
 
-### 6.3. Privacidade e Segurança de Dados
+c) Privacidade e segurança de dados;
 
-Para aplicações que lidam com dados sensíveis, como informações de saúde ou
-dados financeiros, a edge computing oferece uma camada adicional de segurança.
-Ao manter o processamento e o armazenamento de dados localmente, é possível
-reduzir o risco de exposição de dados durante a transmissão para a nuvem. Além
-disso, as regulamentações de proteção de dados, como o GDPR na Europa,
-incentivam o processamento local para proteger a privacidade dos usuários.
+d) Confiabilidade e tolerância à falhas;
 
-### 6.4. Confiabilidade e Resiliência
+e) Personalização e experiência do usuário (e.g. recomendação de conteúdo)
 
-Em sistemas críticos onde a interrupção do serviço não é uma opção, como em
-instalações industriais ou infraestruturas de emergência, a edge computing
-proporciona uma maior confiabilidade. Mesmo que a conectividade com a nuvem
-seja perdida, os dispositivos de borda podem continuar operando de forma
-autônoma, garantindo que os serviços essenciais permaneçam ativos.
+:::
 
-### 6.5. Eficiência Operacional
-
-Aplicações de monitoramento em tempo real, como vigilância por vídeo ou
-monitoramento de equipamentos industriais, beneficiam-se da edge computing para
-realizar análises locais e tomar ações imediatas. Isso não só reduz o tempo de
-resposta, mas também alivia a carga nos servidores centrais, resultando em uma
-operação mais eficiente.
-
-### 6.6. Personalização e Experiência do Usuário
-
-Em cenários onde a personalização é crucial, como em aplicações de varejo ou
-entretenimento, a edge computing permite a entrega de conteúdos e serviços
-adaptados às preferências do usuário em tempo real. Ao processar dados de
-interação localmente, as empresas podem fornecer uma experiência mais ágil e
-relevante para seus clientes.
+Miau, é isso aí! Vejo vocês no encontro!
