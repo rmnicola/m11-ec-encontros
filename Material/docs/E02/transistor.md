@@ -29,9 +29,7 @@ computação digital.
 
 A próxima pergunta interessante a ser feita é **como funciona o transistor**.
 
-## 1. Como funciona o transistor
-
-### 1.1. Semicondutores e o diodo
+## 1. Semicondutores e o diodo
 
 Por trás do funcionamento do transistor está um tipo de material com uma
 característica muito peculiar. Se você era um bom aluno, pode se lembrar de ter
@@ -92,7 +90,7 @@ tiver meia horinha sobrando aí, assita ele inteiro!
 
 :::
 
-#### 1.1.1. Tipo n, tipo p. Tipo, quê?
+### 1.1. Tipo n, tipo p. Tipo, quê?
 
 A imagem acima ilustra dois tipos de semicondutores: tipo n e tipo p. A
 diferença entre eles é simples: os semicondutores tipo n são dopados com átomos
@@ -135,10 +133,38 @@ direta. Nesse cenário, a diferença de potencial reduz a zona de depleção.
 Quando essa zona desaparece, a junção pn permite a passagem de corrente
 elétrica, funcionando como um condutor.
 
+<img 
+  src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgxXlMiF9EZmT55ODF__uVaTgrgaOp7JGrCgh3OVYUtsfaa676h2ylJt6z6nbASUJVmwaodmgGAewQpTHu_53BbYog8hLUdHupc6DFgnXXCMOTSdOYTSG-LQ8H5QdnBLfDQy_xaP3nqwYk/s1600/pndiode.gif"
+  alt="Polarização direta"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '20vh',
+    marginRight: 'auto'
+  }} 
+/>
+<br/>
+<p><center>Fig 4.03 - Polarização direta de uma junção PN. A região de depleção
+diminui até deixar de existir.</center></p>
+
 Por outro lado, se a tensão positiva for aplicada ao lado do tipo n, a zona de
 depleção aumenta. Nesse caso, o material continua a se comportar como um
 isolante. Senhoras e senhores, chegamos ao diodo, um componente que permite a
 passagem de corrente apenas em um sentido.
+
+<img 
+  src="https://circuitdigest.com/sites/default/files/inlineimages/u/Diode-Reverse-biased-working.gif"
+  alt="Polarização reversa"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '90vh',
+    marginRight: 'auto'
+  }} 
+/>
+<br/>
+<p><center>Fig 4.04 - Polarização reversa de junção pn. A região de depleção
+aumenta.</center></p>
 
 <img 
   src="https://www.usinainfo.com.br/img/cms/fotos-categorias/simbolo-do-diodo.jpg"
@@ -146,12 +172,12 @@ passagem de corrente apenas em um sentido.
   style={{ 
     display: 'block',
     marginLeft: 'auto',
-    maxHeight: '60vh',
+    maxHeight: '30vh',
     marginRight: 'auto'
   }} 
 />
 <br/>
-<p><center>Fig 4.03 - O diodo é um componente que permite a passagem de
+<p><center>Fig 4.05 - O diodo é um componente que permite a passagem de
 corrente elétrica apenas do ânodo em direção ao cátodo.</center></p>
 
 :::tip Exercício 4.01
@@ -164,65 +190,122 @@ tensão, há alguma maneira de controlar sua intensidade? O que acontece com ess
 energia dissipada?
 :::
 
-Os transistores são componentes eletrônicos fundamentais para o funcionamento
-de praticamente todos os dispositivos eletrônicos modernos. Eles atuam como
-interruptores que controlam o fluxo de corrente elétrica em circuitos,
-permitindo ou bloqueando a passagem de elétrons. Isso é essencial para
-processar e armazenar informações em sistemas digitais. Um transistor é
-composto por três partes principais: o coletor, a base e o emissor. A operação
-básica de um transistor envolve a aplicação de uma pequena tensão ou corrente
-na base, que controla uma corrente maior entre o coletor e o emissor. 
+## 2. O transistor
 
-De longe a melhor explicação que já vi sobre o funcionamento de semicondutores
-foi feita em um vídeo do Veritassium. O vídeo é fantástico e conta a história
-por trás do desenvolvimento do LED azul e o impacto disso na indústria, mas vou
-deixar como obrigatório apenas assistir o trecho em que ele fala sobre o
-diodo (o conceito apresentado é praticamente o mesmo para transistores).
+Para partir do diodo para o transistor, precisamos adicionar um mecanismo que
+permita controlar *quando* o componente vai conduzir. Essa adição faz com que
+seja possível o componente funcionar tanto como uma chave como um amplificador
+de tensão/corrente.
+
+### 2.1. Transistor de junção bipolar
+
+<img 
+  src="https://www.allaboutelectronics.org/wp-content/uploads/2020/04/BJT_WB_1.png"
+  alt="npn BJT"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '30vh',
+    marginRight: 'auto'
+  }} 
+/>
+<br/>
+<p><center>Fig 4.06 - O transistor de junção bipolar npn tem três zonas de
+material semicondutor, sendo uma tipo p sanduíchada entre duas regiões tipo
+n.</center></p>
+
+A resposta? Adicionar três zonas polarizadas, o que faz com que exista duas
+zonas de depleção. Aqui, vale à pena também falar sobre a nomenclatura das três
+entradas de um transistor bjt:
+
+* A base (B) é onde entra o sinal utilizado como *chave* para fazer com que o
+  transistor conduza;
+* O coletor (C) é onde tipicamente conecta-se uma fonte de tensão de alta
+  potência. Quando o transistor está em condução, a corrente elétrica corre do
+  coletor para;
+* O emissor (B), que tipicamente é conectado ao restante do circuito (assumindo
+  o uso de um transistor como amplificador).
+
+Para entender como o transistor BJT npn funciona é conveniente represetar as
+duas junções como diodos, como na figura abaixo.
+
+<img 
+  src="https://www.circuitcrush.com/wp-content/uploads/Transistors-as-Diodes-600x338.jpg"
+  alt="npn BJT como diodos"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '30vh',
+    marginRight: 'auto'
+  }} 
+/>
+<br/>
+<p><center>Fig 4.07 - Transistor npn BJT com suas regiões bipolares como
+diodos.</center></p>
+
+Se aplicarmos uma tensão positiva na direção CE, nada acontece, pois as regiões
+BE e BC continuam em polarização reversa (de agora em diante chamaremos de
+corte). Agora, se houver uma tensão positiva na direção de BE, o transistor
+começa a conduzir pois a região de depleção BE diminui e os elétrons do emissor
+começam a ir em direção à base, que é positiva.
+
+Ok, mas isso ainda não explicou muita coisa. A próxima informação é
+fundamental: as regiões do BJT **não são dopadas da mesma forma**. A base tem
+uma dopagem **muito leve** e *fina*, já o emissor tem uma dopagem **pesada** e
+o coletor tem uma dopagem **intermediária**. Por que isso é fundamental? Pois
+os elétrons que saem do emissor quando BE está conduzindo acabam sendo
+capturados pelo coletor, que tem uma dopagem muito mais forte que a base. Isso
+faz com que alguns poucos elétrons passem pela base, mas a esmagadora maioria
+se move de acordo com a tensão aplicada em CE e vai em direção ao pólo
+positivo, no coletor. A imagem abaixo mostra esse fluxo de elétrons.
 
 
-:::tip Exercício 2.01
+<img 
+  src="https://www.circuitcrush.com/wp-content/uploads/How-BJT-Works.jpg"
+  alt="Fluxo de elétrons em um transistor npn"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '30vh',
+    marginRight: 'auto'
+  }} 
+/>
+<br/>
+<p><center>Fig 4.08 - Fluxo de elétrons em um transistor npn em região de
+condução. Note que esse diagrama não mostra o fluxo de corrente elétrica, mas
+sim o fluxo de elétrons.</center></p>
 
-O vídeo acima mostra como um diodo funciona no contexto de um LED. Nele, é
-possível ver que um semicondutor sempre vai ter uma emissão de energia (perda)
-relativa ao tamanho do *band gap*. Em diodos, essa perda se manifesta em uma
-queda de tensão (valor típico é de 0,4V). Tendo isso em mente, pesquise a
-resposta para as seguintes perguntas:
+O efeito disso é que a base fica praticamente isolada do circuito de
+*potência*, que tem fluxo de corrente de C para E. Essa característica garante
+que o transistor consegue funcionar como um **amplificador** e também como uma
+**chave** eletrônicamente controlada.
 
-1. Se o diodo funciona pela aglutinação de um semicondutor tipo p com um tipo
-   n, como isso funciona em um transistor?
-2. Como minimizar essa perda de energia? Claramente ela não é exatamente útil
-   para transistores dentro de uma CPU.
+O último detalhe do transistor BJT que vou deixar aqui é a maneira como ele de
+fato se parece.
+
+<img 
+  src="https://www.circuitcrush.com/wp-content/uploads/BJT-Cross-Section.jpg"
+  alt="Fluxo de elétrons em um transistor npn"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '60vh',
+    marginRight: 'auto'
+  }} 
+/>
+<br/>
+<p><center>Fig 4.09 - Vista de seção de um transistor BJT npn.</center></p>
+
+:::tip Exercício 4.02
+
+Toda a explicação sobre o transistor BJT foi feita com base no transistor npn.
+Se as regiões tiverem as polaridades trocadas, com a base virando negativa e
+tanto coletor como emissor virando positivas, o que muda na prática?
 
 :::
 
-## 2. CMOS vs MOSFET
+### 2.2. O MOSFET
 
-Os transistores MOSFET (Metal-Oxide-Semiconductor Field-Effect Transistor) são
-amplamente utilizados em circuitos integrados devido à sua eficiência e
-capacidade de controle de corrente. Existem dois tipos principais de MOSFETs:
-de enriquecimento e de depleção, mas na prática, os de enriquecimento são os
-mais utilizados. 
-
-Dentro dos MOSFETs, temos os transistores CMOS (Complementary
-Metal-Oxide-Semiconductor), que são fundamentais na construção de circuitos
-digitais. A tecnologia CMOS utiliza uma combinação de MOSFETs de canal n (nMOS)
-e de canal p (pMOS) para criar circuitos que consomem muito pouca energia
-quando em estado estacionário. Essa característica é essencial para a
-eficiência energética de dispositivos como smartphones e laptops.
-
-## 2.1. nMOS vs pMOS
-
-Os transistores nMOS e pMOS são dois tipos de MOSFETs que se diferenciam
-principalmente pela polaridade da tensão aplicada e pelo tipo de portador de
-carga que conduzem. No nMOS, a corrente é transportada por elétrons, que são
-portadores de carga negativa. Para que o nMOS conduza, é necessário aplicar uma
-tensão positiva entre a porta (gate) e a fonte (source). Já no pMOS, a corrente
-é transportada por lacunas, que são portadores de carga positiva. O pMOS conduz
-quando uma tensão negativa é aplicada entre a porta e a fonte.
-
-Esses dois tipos de transistores são combinados na tecnologia CMOS para formar
-pares complementares que realizam operações lógicas com baixo consumo de
-energia.
 
 ## 3. Portas lógicas com transistores
 
