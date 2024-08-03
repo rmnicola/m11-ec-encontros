@@ -3,8 +3,7 @@ title: Ponderadas
 sidebar_position: 2
 slug: /ponderadas
 ---
-
-# Atividades ponderadas do módulo
+# Atividades Ponderadas do Módulo
 
 <img 
   src="https://i.imgur.com/Sfmg0N8.jpeg"
@@ -12,182 +11,121 @@ slug: /ponderadas
   style={{ 
     display: 'block',
     marginLeft: 'auto',
-    maxHeight: '30vh',
-    marginRight: 'auto'
+    marginRight: 'auto',
+    maxHeight: '30vh'
   }} 
 />
 <br/>
 
-## 1. Como vão funcionar as ponderadas do módulo 11
+## 1. Funcionamento das Ponderadas no Módulo 11
 
-As atividades ponderadas tem um papel importante para medir o progresso dos
-estudantes em sua compreensão dos assuntos principais abordados no módulo.
-Muitas vezes estas atividades acabam sendo um fragmento do conteúdo estudado.
-Para este módulo, as atividades propostas terão uma profundidade e complexidade
-maior. 
+As atividades ponderadas são essenciais para avaliar o progresso dos estudantes
+na compreensão dos temas centrais do módulo. Frequentemente, elas representam
+um recorte do conteúdo estudado. Neste módulo, as atividades propostas terão
+maior profundidade e complexidade. 
 
-No entanto, não é exatamente razoável imaginar que é possível aumentar a
-complexidade e escopo de todas as atividades do módulo. Há uma
-incompatibilidade de horário disponível que deve ser resolvida. A solução deste
-módulo é oferecer a liberdade de escolha: o estudante é apenas obrigado a
-concluir 3 atividades ponderadas das 6 disponíveis. Quais atividades? Isso é
-uma decisão do estudante de acordo com o assunto que for mais interessante para
-um aprofundamento.
+Entretanto, aumentar a complexidade e escopo de todas as atividades seria
+inviável devido a restrições de tempo. A solução encontrada foi oferecer
+liberdade de escolha: o estudante deverá concluir apenas **3 atividades
+ponderadas dentre as 6 disponíveis**, selecionando aquelas que considerar mais
+interessantes para aprofundamento.
 
-### 1.1. Notas e entregas
+### 1.1. Notas e Entregas
 
-Para que essa escolha seja possível dentro do sistema da Adalove, foram
-registradas três atividades ponderadas genéricas no sistema. Essas três
-atividades genéricas serão utilizadas para publicação das notas do estudante.
-Quais notas serão publicadas? As 3 melhores notas, sempre. Se o estudante não
-tiver 3 atividades concluídas no prazo, ficará com uma ou mais atividade
-ponderada com 0.
+Para viabilizar essa escolha no sistema da Adalove, foram cadastradas três
+atividades ponderadas genéricas. As notas das **3 atividades com maior
+pontuação** serão publicadas nessas atividades genéricas. Caso o estudante não
+conclua 3 atividades dentro do prazo, as atividades restantes receberão nota 0.
 
 ### 1.2. Prazos
 
-Embora as atividades registradas na adalove estejam com os prazos especificados
-para as semanas 8, 9 e 10 respectivamente, na verdade cada atividade ponderada
-proposta terá um prazo em específico. Este prazo poderá ser visto aqui, nesta
-seção, na seção específica de cada atividade ponderada e no Github Classrooms.
+Apesar das atividades na Adalove exibirem prazos nas semanas 8, 9 e 10, cada
+atividade ponderada possui um prazo específico, que será divulgado nesta seção,
+na descrição de cada atividade e no Github Classrooms.
 
-### 1.3. Atividades com pré-requisitos
+### 1.3. Pré-requisitos
 
-Algumas das atividades propostas vão ter pré-requisitos (e.g. para poder fazer
-a atividade 5, deve-se concluir a atividade 4). Quando existir essa
-dependência, ela estará claramente descrita aqui e no enunciado da atividade.
+Algumas atividades possuem pré-requisitos (exemplo: a atividade 5 exige a
+conclusão da atividade 4). Essas dependências serão claramente indicadas aqui e
+no enunciado da atividade.
 
 ### 1.4. Github Classrooms
 
-Em breve mais detalhes
+Em breve mais detalhes.
 
 ## 2. Ponderadas
 
-### 2.1. P1 - Criando um processador de 8 bits
+### 2.1. P1 - Processador de 8 Bits
 
-**Pré-requisitos** 
+**Pré-requisitos:** Nenhum.
 
-Nenhum
+**Descrição:** Nesta atividade, você construirá um processador de 8 bits
+completo em um simulador de lógica. Explore arquiteturas simples como o SAP
+(Simple as Possible) e implemente registradores, circuitos lógicos e E/S. Além
+disso, desenvolva um conjunto enxuto de microcódigo.
 
-**Descrição**
+**Prazo:** A definir.
 
-Nesta atividade, o estudante deverá criar um processador de 8 bits completo em
-um simulador de lógica. Para isso, deve-se estudar cuidadosamente arquiteturas
-simples como o SAP (Simple as possible) e implementar registradores, circuitos
-lógicos e i/o. Além disso, deve-se também implementar um conjunto enxuto de
-microcode.
+**Mais detalhes:** Em breve.
 
-**Prazo**
+### 2.2. P2 - Visão Computacional em um ESP32
 
-A ser decidido
+**Pré-requisitos:** Nenhum.
 
-**Mais detalhes**
+**Descrição:** Resolva um problema de visão computacional utilizando apenas um
+microcontrolador (recomenda-se o ESP32). Considere um modelo que seja eficaz e
+execute em um microcontrolador com recursos limitados.
 
-Link em breve
+**Prazo:** A definir.
 
-### 2.2. P2 - Visão computacional em um ESP32
+**Mais detalhes:** Em breve.
 
-**Pré-requisitos** 
+### 2.3. P3 - Concorrência em Microcontroladores
 
-Nenhum
+**Pré-requisitos:** P2.
 
-**Descrição**
+**Descrição:** Utilize um framework de concorrência (sugestão: FreeRTOS) para
+adicionar uma tarefa ao sistema de visão computacional da P2. Gerencie as
+tarefas para executar a verificação de visão computacional e comunicar os
+resultados a outro dispositivo sem fio.
 
-Nesta atividade, o estudante deverá resolver um problema de visão computacional
-tendo como recurso principal apenas um microcontrolador (sugere-se o uso do
-ESP32). Para isso, será importante considerar um modelo que simultaneamente é
-capaz de resolver o problema proposto e rodar com uma performance aceitável em
-um microcontrolador com recursos computacionais restritos.
+**Prazo:** A definir.
 
-**Prazo**
+**Mais detalhes:** Em breve.
 
-A ser decidido
+### 2.4. P4 - Framework de Inferência para Deep Learning
 
-**Mais detalhes**
+**Pré-requisitos:** Nenhum.
 
-Link em breve
+**Descrição:** Desenvolva o código-base para um framework de inferência
+minimalista capaz de carregar e executar um arquivo de modelo em formato aberto
+(exemplo: ONNX).
 
-### 2.3. P3 - Explorando concorrência em microcontroladores (visão computacional + RTOS)
+**Prazo:** A definir.
 
-**Pré-requisitos** 
+**Mais detalhes:** Em breve.
 
-Esta ponderada depende da ponderada P2.
+### 2.5. P5 - Paralelismo para CPUs
 
-**Descrição**
+**Pré-requisitos:** P4.
 
-Nesta atividade, o estudante deverá utilizar um framework de concorrência em
-microcontroladores (sugere-se o uso do FreeRTOS) para adicionar uma tarefa ao
-sistema de visão computacional em microcontroladores. Este gerenciamento de
-tarefas deve permitir que não só a verificação de visão computacional seja
-executada como a comunicação do seu resultado seja feita com outro dispositivo
-sem utilizar fios.
+**Descrição:** Implemente paralelismo utilizando CPU no framework de inferência
+da P4. Utilize ferramentas como OpenMP, MPI ou recursos nativos de paralelismo
+de linguagens de sistema (não Python).
 
-**Prazo**
+**Prazo:** A definir.
 
-A ser decidido
+**Mais detalhes:** Em breve.
 
-**Mais detalhes**
+### 2.6. P6 - Paralelismo para GPUs
 
-Link em breve
+**Pré-requisitos:** P4.
 
-### 2.4. P4 - Criando um framework de inferência para Deep Learning
+**Descrição:** Adicione paralelismo utilizando GPU ao framework de inferência
+da P4. Devido a restrições, utilize CUDA (ROCm é permitido, mas não
+recomendado) ou ferramentas de abstração como Bend.
 
-**Pré-requisitos** 
+**Prazo:** A definir.
 
-Nenhum
+**Mais detalhes:** Em breve.
 
-**Descrição**
-
-Para esta atividade, deve-se desenvolver o código-base para um framework de
-inferência minimalista. Este framework deve ser capaz de ler um arquivo de
-modelos de formato aberto (e.g. ONNX) e executá-lo.
-
-**Prazo**
-
-A ser decidido
-
-**Mais detalhes**
-
-Link em breve
-
-### 2.5. P5 - Explorando paralelismo para CPUs (inferência em paralelo)
-
-**Pré-requisitos** 
-
-Esta atividade depende da atividade P4.
-
-**Descrição**
-
-Adição de paralelismo utilizando CPU ao framework de inferência. Este
-paralelismo pode ser feito utilizando ferramentas como o OpenMP ou MPI, mas
-também é possível utilizar as ferramentas nativas de paralelismo de
-**linguagens de sistema** (nada de Python).
-
-**Prazo**
-
-A ser decidido
-
-**Mais detalhes**
-
-Link em breve
-
-### 2.6. P6 - Explorando paralelismo para GPUs (inferência em paralelo + CUDA)
-
-**Pré-requisitos** 
-
-Esta atividade depende da atividade P4.
-
-**Descrição**
-
-Adição de paralelismo utilizando GPU ao framework de inferência. Como há uma
-restrição maior para implementação de paralelismo para GPUs, essa atividade
-fica restrita à utilização de CUDA (ROCm está liberado também, mas não é
-recomendado). Ferramentas que criam abstrações sob CUDA (e.g. Bend) também
-estão liberadas.
-
-**Prazo**
-
-A ser decidido
-
-**Mais detalhes**
-
-Link em breve
