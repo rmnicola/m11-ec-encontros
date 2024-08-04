@@ -304,8 +304,257 @@ tanto coletor como emissor virando positivas, o que muda na prática?
 
 :::
 
+O vídeo abaixo serve como um material extra para entender o funcionamento dos
+transistores BJT.
+
+:::info Autoestudo obrigatório
+
+<div style={{ textAlign: 'center' }}>
+    <iframe 
+        style={{
+            display: 'block',
+            margin: 'auto',
+            width: '100%',
+            height: '50vh',
+        }}
+        src="https://www.youtube.com/embed/fIvZen2tq_w" 
+        frameborder="0" 
+        allowFullScreen>
+    </iframe>
+</div>
+
+:::
+
 ### 2.2. O MOSFET
 
+Por mais que o transistor BJT faça *tudo* melhor e *menor* que o tubo de vácuo,
+não é ele que existe no dispositivo que você está usando para ler esse texto
+agora. Essa honra fica para um outro tipo de transistor, o **Transistor de
+efeito de campo de metal-oxido-semicondutor**, ou **MOSFET**.
+
+Baita nome, né? É... Você não entendeu quase nenhuma dessas palavras, né?
+Relaxa, você não está sozinho. Vamos juntos que eu te explico o que está por
+trás desse nome assustador.
+
+Vamos começar pela parte fácil? O símbolo e os terminais do MOSFET são um
+pouquinho diferentes do transistor BJT, vamos ver:
+
+<img 
+  src="https://www.lesics.com/Working-of-Transistors/mosfet.jpg"
+  alt="MOSFET"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '30vh',
+    marginRight: 'auto'
+  }} 
+/>
+<br/>
+<p><center>Fig 4.10 - Um MOSFET *tipo n*.</center></p>
+
+Enquanto o BJT tinha *Base*, *Coletor* e *Emissor*, o MOSFET tem *Gate*,
+*Drain* e *Source*. Há uma equilavência funcional entre essas portas:
+
+* *Base* - *Gate*
+* *Coletor* - *Source*
+* *Emissor* - *Drain*
+
+O transistor representado acima é um MOSFET *tipo n*. Assim como o BJT tem
+configurações *pnp* e *npn*, o MOSFET tem configurações *tipo n* e *tipo p*.
+Sim, eu vou te perguntar sobre isso mais tarde.
+
+Do ponto de vista de dopagem, o MOSFET é como se aplicassemos seletivamente
+zonas de dopagem distintas em uma mesma "pastilha" (em inglês, *wafer*) de
+silício.
+
+<img 
+  src="https://www.mks.com/mam/celum/celum_assets/Figure_11-Semiconductor_Handbook_800w.jpg"
+  alt="MOSFET por dentro"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '60vh',
+    marginRight: 'auto'
+  }} 
+/>
+<br/>
+<p><center>Fig 4.11 - O MOSFET por dentro. Há uma região principal, do qual o
+*wafer* é feito. As regiões do *source* e do *drain* são feitas com uma dopagem
+diferente da região principal. Por fim, o terminal do *gate* é separado do
+semicondutor por um óxido isolante.</center></p>
+
+Se aplicarmos uma tensão no sentido de DS (*Drain - Switch*), assim como no
+caso da tensão CE no BJT, as zonas de depleção só vão aumentar e o transistor
+não conduz. No transistor BJT, resolvemos isso aplicando uma tensão positiva na
+*Base*. O problema é que o *Gate* do MOSFET está separado do semicondutor por
+uma camada de óxido que é isolante. Qual é a ideia por trás disso? É aqui, meu
+jovem padawan, que entra o **efeito de campo**.
+
+**Efeito de campo - ou - como funciona um capacitor**
+
+Um capacitor é um dos componentes eletrônicos mais simples que existem. A ideia
+por trás dele é separar dois condutores utilizando um material isolante. Um
+capacitor eletrolítico tipicamente vai ter a configuração vista abaixo:
+
+<img 
+  src="https://dwma4bz18k1bd.cloudfront.net/tutorials/_1024x448_crop_center-center_82_line/electrolytic-capacitor-internal.jpg.webp"
+  alt="O capacitor por dentro"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '20vh',
+    marginRight: 'auto'
+  }} 
+/>
+<br/>
+<p><center>Fig 4.12 - Um capacitor eletrolítico tipicamente é um enrolamento de
+chapas metálicas separadas por um material isolante. As chapas recebem cargas
+opostas durante o funcionamento do circuito.</center></p>
+
+Quando colocamos o capacitor em um circuito real, com uma fonte de alimentação,
+o que podemos ver é que as chapas condutoras acumulam cargas opostas e o
+material isolante acumula um campo elétrico estimulado por essas cargas
+opostas. No funcionamento típico de um capacitor, essa energia acumulada é
+descarregada assim que desligamos a fonte de alimentação. É por isso que o
+capacitor pode servir como um *acumulador*, que *atrasa* a resposta dinâmica do
+sistema. A imagem abaixo representa esse comportamento.
+
+<img 
+  src="https://www.physics-and-radio-electronics.com/electronic-devices-and-circuits/passive-components/capacitors/images/capacitorcharging.png"
+  alt="Circuito c/ capacitor"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '40vh',
+    marginRight: 'auto'
+  }} 
+/>
+<br/>
+<p><center>Fig 4.13 - Um capacitor quando alimentado por uma fonte de
+tensão.</center></p>
+
+A parte interessante para nós acontece justamente no acúmulo de carga. Note que
+a imagem acima mostra *elétrons livres* e *buracos*. Onde mais você viu isso?
+Exatamente, na junção pn.
+
+Beleza, mas e daí? O que isso tem a ver com o MOSFET? Eu vou deixar só mais uma
+imagem abaixo de um tipo específico de capacitor que existe e fica como um
+exercício extraoficial você tentar entender qual a relação com o MOSFET.
+
+<img 
+  src="https://h-gens.github.io/images/2015-02-25-MOSCAP-derivations/mos_cross_section.png"
+  alt="Capacitor MOS"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '40vh',
+    marginRight: 'auto'
+  }} 
+/>
+<br/>
+<p><center>Fig 4.14 - O capacitor MOS (metal-oxido-semicondutor) é uma
+configuração possível de um capacitor. Substitui-se uma das placas de metal por
+material semicondutor.</center></p>
+
+**Cria-se um canal**
+
+Vamos considerar o caso do MOSFET *tipo p* e novamente aplicar uma tensão no
+sentido DS, só que agora também uma tensão positiva em G. O que ocorre de fato
+é que o efeito de campo do capacitor MOS formado entre o Gate e o substrato
+*tipo p* faz com que os buracos do substrato sejam preenchidos e crie-se uma
+nova zona de depleção e, dentro dela, um canal que efetivamente conecta as
+zonas de depleção de D e S, permitindo a movimentação dos elétrons. Assim, o
+MOSFET conduz.
+
+<img 
+  src="https://www.researchgate.net/publication/325298919/figure/fig2/AS:631344749096962@1527535726900/An-example-of-a-n-channel-MOSFET-transistor-a-for-a-0V-gate-bias-and-b-positive.png"
+  alt="MOSFET com canal"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '40vh',
+    marginRight: 'auto'
+  }} 
+/>
+<br/>
+<p><center>Fig 4.15 - Um MOSFET tipo p, quando recebe tensão positiva em seu
+*gate*, gera um canal por onde é possível passar corrente entre o *drain* e o
+*source*</center></p>
+
+:::tip Exercício 4.03
+
+É. Chegou a hora. Eu mostrei o MOSFET *tipo p* para vocês. Qual é a diferença
+na prática de um *tipo p* para um *tipo n*. Muda alguma coisa na maneira como
+devo usá-lo?
+
+Além disso. Nós vimos no exemplo acima um tipo de MOSFET chamado de *depletion
+type MOSFET*. Existe um outro tipo chamado *enhancement type MOSFET*. Pesquise
+sobre ele e discorra sobre a diferença entre os dois tipos.
+
+:::
+
+Como sei que essa explicação acima pode ser um tanto difícil de acompanhar em
+formato textual, segue um vídeo que aborda os mesmos conceitos:
+
+:::info Autoestudo obrigatório
+
+<div style={{ textAlign: 'center' }}>
+    <iframe 
+        style={{
+            display: 'block',
+            margin: 'auto',
+            width: '100%',
+            height: '50vh',
+        }}
+        src="https://www.youtube.com/embed/stM8dgcY1CA" 
+        frameborder="0" 
+        allowFullScreen>
+    </iframe>
+</div>
+
+:::
+
+
+Beleza, mas por quê usar um componente com um comportamento tão mais complexo
+que o bom e velho transistor BJT? Há algumas vantagens do MOSFET sobre o BJT,
+as duas principais são:
+
+* A *impedância* entre a entrada e o circuito de potência do MOSFET é **muito**
+  alta. Isso significa um isolamento maior entre o circuito de lógica e o
+  circuito de potência quando usamos o MOSFET como um amplificador
+  (praticamente todas as pontes H modernas usam MOSFETS).
+* Se você prestou bastante atenção na explicação acima, pode ter percebido que
+  o MOSFET tem um método de fabricação que parte de uma "chapa" de silício puro
+  e, só fazendo adições a esse material (ou, deposições), conseguimos criar
+  transistores do tipo MOSFET. Transistores, no plural. É possível fabricar
+  bilhões de MOSFETs de uma vez só e eles podem ser feitos em um tamanho
+  absurdamente pequeno.
+
+:::tip Exercício 4.04
+
+Vamos ver como você está em conceitos básicos de acionamentos. Eu mencionei
+acima a ponte H. Explique o funcionamento desse tipo de circuito e para que ele
+serve. Qual a relação do MOSFET com a ponte H?
+
+:::
+
+:::info Autoestudo opcional
+
+<div style={{ textAlign: 'center' }}>
+    <iframe 
+        style={{
+            display: 'block',
+            margin: 'auto',
+            width: '100%',
+            height: '50vh',
+        }}
+        src="https://www.youtube.com/embed/g8Qav3vIv9s" 
+        frameborder="0" 
+        allowFullScreen>
+    </iframe>
+</div>
+
+:::
 
 ## 3. Portas lógicas com transistores
 
