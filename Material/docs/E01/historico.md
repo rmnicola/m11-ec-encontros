@@ -219,6 +219,26 @@ entrada do circuito.
 
 :::
 
+:::info Autestudo opcional
+
+<div style={{ textAlign: 'center' }}>
+    <iframe 
+        style={{
+            display: 'block',
+            margin: 'auto',
+            width: '100%',
+            height: '50vh',
+        }}
+        src="https://www.youtube.com/embed/FU_YFpfDqqA" 
+        frameborder="0" 
+        allowFullScreen>
+    </iframe>
+</div>
+<br/>
+
+:::
+
+
 Com o poder dos tubos de vácuo, o ENIAC conseguiu fazer muito mais do que
 qualquer calculadora mecânica da história e se tornou uma das máquinas
 computacionais mais famosas da história. O vídeo abaixo apresenta um breve
