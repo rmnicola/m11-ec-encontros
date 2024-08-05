@@ -4,6 +4,8 @@ sidebar_position: 1
 sidebar_class_name: autoestudo
 ---
 
+import Porta1 from '@site/static/img/porta1.png';
+
 # O transistor e sua função no computador
 
 Vamos voltar um pouco no tempo, para 1947. Estamos nos Estados Unidos, no Bell
@@ -576,17 +578,100 @@ serve. Qual a relação do MOSFET com a ponte H?
 
 :::
 
-Os transistores podem ser combinados de várias maneiras para formar portas
-lógicas, que são os blocos fundamentais de circuitos digitais. Por exemplo, uma
-porta NOT (inversora) pode ser criada usando um único transistor nMOS. Uma
-porta AND pode ser construída usando uma combinação de transistores nMOS e
-pMOS. Da mesma forma, portas OR, NAND, NOR e XOR podem ser construídas com
-diferentes arranjos de transistores.
+O que falta para completar nosso entendimento sobre como o transistor constrói
+computadores? Falta bastante coisa ainda, mas o último passo dessa seção é a
+utilização do transistor como o componente fundamental por trás de operações
+básicas lógicas e aritméticas. No exercício *1.02* você utilizou tubos de vácuo
+para representar as portas lógicas *OR*, *AND* e *NOT*. Para o transistor, o
+funcionamento é precisamente o mesmo. Ou seja, essa seção aqui é inteira para
+você treinar.
 
-O design de portas lógicas utilizando transistores é crucial para a construção
-de processadores e outros componentes de hardware, pois eles executam as
-operações lógicas básicas necessárias para o processamento de dados. A
-eficiência e a velocidade dos circuitos lógicos dependem da forma como esses
-transistores são interconectados e gerenciados. 
+:::tip Exercício 4.05
 
-TODO - Exercícios de portas lógicas com transistores
+Assim como fizemos com os tubos de vácuo, represente as seguintes portas
+lógicas utilizando transistores:
+
+* *OR*
+* *AND*
+* *NOT*
+
+:::
+
+:::tip Exercício 4.06
+
+A figura abaixo demonstra a utilização de transistores do tipo CMOS para a
+construção de uma porta lógica. Identifique qual porta lógica está sendo
+representada. Na imagem, *A* representa a entrada e *Q* representa a saída.
+
+<img 
+  src={Porta1}
+  alt="porta1"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '20vh',
+    marginRight: 'auto'
+  }} 
+/>
+
+:::
+
+:::tip Exercício 4.07
+
+A figura abaixo demonstra a utilização de transistores do tipo CMOS para a
+construção de uma porta lógica. Identifique qual porta lógica está sendo
+representada. Na imagem, *A* e *B* representam as entradas e *Out* representa a
+saída.
+
+<img 
+  src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/CMOS_NAND.svg/1200px-CMOS_NAND.svg.png"
+  alt="porta1"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '40vh',
+    marginRight: 'auto'
+  }} 
+/>
+
+:::
+
+:::tip Exercício 4.08
+
+A figura abaixo demonstra a utilização de transistores do tipo CMOS para a
+construção de uma porta lógica. Identifique qual porta lógica está sendo
+representada. Na imagem, *A* e *B* representam as entradas e *Y* representa a
+saída.
+
+<img 
+  src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Cmos_nor.svg/300px-Cmos_nor.svg.png"
+  alt="porta1"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '40vh',
+    marginRight: 'auto'
+  }} 
+/>
+
+:::
+
+:::tip Exercício 4.09
+
+A figura abaixo demonstra a utilização de transistores do tipo CMOS para a
+construção de uma porta lógica. Identifique qual porta lógica está sendo
+representada. Na imagem, *A* e *B* representam as entradas e *Q* representa a
+saída.
+
+<img 
+  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/CMOS_OR.svg/2560px-CMOS_OR.svg.png"
+  alt="porta1"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '30vh',
+    marginRight: 'auto'
+  }} 
+/>
+
+:::
