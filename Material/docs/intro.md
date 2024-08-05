@@ -162,10 +162,186 @@ margin: '0' }}>
 
 ## 3. Bibliografia
 
+:::warning
+
+Sou eu novamente. Só vim avisar que mostrar a bibliografia do módulo para vocês
+também é **obrigatório** de acordo com o MEC. O que estou fazendo aqui? Estou
+mostrando a bibliografia para vocês.
+
+:::
+
 ### 3.1. Bibliografia básica
 
-TODO - Bibliografia básica
+[ATCHABAHIAN, A. C. R. C. ESG: Teoria e prática para a verdadeira
+sustentabilidade nos negócios. São Paulo: Expressa,
+2022.](https://integrada.minhabiblioteca.com.br/#/books/9786555599237)
+
+* O livro é uma obra essencial para integrar as diretrizes de Environmental,
+  Social, and Governance em estratégias empresariais, enfatizando a importância
+  de práticas sustentáveis genuínas. Ele aborda conceitos cruciais sobre como
+  negócios podem e devem operar de maneira responsável, alinhando lucratividade
+  à ética ambiental e social, crucial para a resiliência e reputação
+  corporativa em uma economia cada vez mais consciente.
+
+[BORDIN, M. V.; SERPA, M. S.; BRANDÃO, D. S.; et al. Processamento paralelo e
+distribuído. Porto Alegre: SAGAH,
+2021](https://integrada.minhabiblioteca.com.br/#/books/9786556901084)
+
+* Este livro oferece uma análise aprofundada dos paradigmas do processamento
+  paralelo e distribuído, abordando seus conceitos, motivações, históricos e
+  plataformas de execução. Com insights sobre suas perspectivas atuais e
+  futuras, é uma leitura fundamental para entender o processamento de dados em
+  diferentes cenários computacionais.
+
+[FERNANDES, B. H. R.; BERTON, L. H. Administração estratégica: da competência
+empreendedora à avaliação de desempenho. 2. ed. São Paulo: Saraiva,
+2017](https://integrada.minhabiblioteca.com.br/#/books/9788502146013)
+
+* Considerando o contexto dos desafios de liderança e administração, este livro
+  dá subsídios para que se construa avaliações de desempenho considerando os
+  aspectos de gestão de times dentro de organizações. 
+
+[FILHO, R. I.; CIERCO, A. A. Governança, ESG e estrutura organizacional. São
+Paulo: Actual,
+2022](https://integrada.minhabiblioteca.com.br/#/books/9786587019536)
+
+* O livro aborda temas atuais e relevantes, oferece uma abordagem prática e
+  aplicável, é escrito por especialistas respeitados e destaca a importância
+  estratégica da governança e da sustentabilidade nas organizações.
+
+[FOROUZAN, B. A. Comunicação de dados e redes de computadores. Porto Alegre:
+AMGH, 2010](https://integrada.minhabiblioteca.com.br/#/books/9788563308474)
+
+* Este livro abrangente aborda a teoria e aplicação de redes de computadores,
+  utilizando o modelo de cinco camadas da Internet como estrutura. É uma
+  leitura essencial para compreender as características dos dispositivos de
+  rede e a interdependência das camadas, proporcionando um entendimento
+  completo da teoria e prática de redes de comunicação.
+
+[GONZALEZ, R. S. Governança Corporativa. São Paulo: Trevisan,
+2012](https://integrada.minhabiblioteca.com.br/#/books/9788599519424)
+
+* A obra é fundamental para compreender os mecanismos de controle e direção nas
+  corporações, abordando temas como ética empresarial, responsabilidade dos
+  gestores e transparência para stakeholders. Sua utilização é justificada pela
+  profundidade com que trata os princípios de boas práticas administrativas,
+  essenciais para a sustentabilidade e o sucesso de qualquer organização no
+  cenário econômico atual.
+
+[MONTEIRO, E. R.; JUNIOR, R. C M.; LIMA, B. S. de; et al. Sistemas
+distribuídos. Porto Alegre: SAGAH,
+2020.](https://integrada.minhabiblioteca.com.br/#/books/9786556901978)
+
+* Este livro aborda os sistemas distribuídos, explorando a necessidade de
+  compartilhamento de recursos em aplicações que exigem grande capacidade de
+  processamento e armazenamento. Leitura essencial para compreender como lidar
+  com a imensa quantidade de dados na era atual e aproveitar os benefícios dos
+  sistemas distribuídos.
+
+[SOBRAL, W. S. Design de interfaces: introdução. São Paulo: Saraiva,
+2019.](https://integrada.minhabiblioteca.com.br/#/books/9788536532073)
+
+* Esta obra aborda o que são interfaces e sua evolução ao longo do tempo, até
+  chegarem à Interface Homem-Computador (IHC). Propõe o estudo das fases de um
+  projeto, incluindo métodos de construção e documentação. Discorre sobre as
+  estratégias de prototipagem adotadas no desenvolvimento do design e comenta a
+  lista de princípios para orientar o designer durante esse processo criativo.
+
+[SOLER, F.; PALERMO, C. ESG (ambiental, social e governança): da teoria à
+prática. São Paulo: Expressa,
+2023.](https://integrada.minhabiblioteca.com.br/#/books/9786553624276)
+
+* O livro é indispensável para a atualização em sustentabilidade empresarial,
+  trazendo a interface entre os pilares ESG e sua aplicação prática. Ele é
+  crucial por detalhar estratégias operacionais e casos reais, orientando como
+  transpor a teoria de responsabilidade corporativa para ações concretas e
+  mensuráveis, alinhadas às exigências de um mercado global e consciente.
 
 ### 4.2. Bibliografia complementar
 
-TODO - Bibliografia complementar
+[BARSANO, P. R.; BARBOSA, R. P. Gestão ambiental. São Paulo: Saraiva,
+2017.](https://integrada.minhabiblioteca.com.br/#/books/9788536521596)
+
+* O livro aborda uma ampla gama de tópicos relacionados à gestão ambiental,
+  apresenta uma abordagem prática e contextualizada no cenário brasileiro, e é
+  escrito por autores especializados na área. Utilizando esse livro no curso,
+  os leitores podem obter uma compreensão aprofundada dos princípios e práticas
+  da gestão ambiental, preparando-se para atuar nesse campo de forma consciente
+  e responsável.
+
+[COHN, M. Desenvolvimento de software com Scrum. Porto Alegre, Bookman,
+2011.](https://integrada.minhabiblioteca.com.br/#/books/9788577808199)
+
+* O livro apresenta estratégias para a implementação e a manutenção de times de
+  desenvolvimento utilizando a metodologia Scrum.
+
+[CORMEN, T. Algoritmos: teoria e prática. 3. ed. Rio de Janeiro: LTC,
+2022.](https://integrada.minhabiblioteca.com.br/#/books/9788595158092)
+
+* Este livro apresenta um texto abrangente sobre o moderno estudo de algoritmos
+  para computadores. É uma obra clássica, cuja primeira edição tornou-se
+  amplamente adotada nas melhores universidades em todo o mundo, bem como
+  padrão de referência para profissionais da área.
+
+[DELAMARO, M. Introdução ao teste de software. 2. ed. Rio de Janeiro: Elsevier,
+2016.](https://integrada.minhabiblioteca.com.br/#/books/9788595155732)
+
+* Este livro, desenvolvido para servir como livro de apoio em cursos de
+  engenharia de computação e áreas correlatas, visa apresentar ao profissional
+  as informações básicas relativas às técnicas de teste, bem como formas de
+  aplicá-las nos mais variados domínios e tipos de software.
+
+[FILHO, E. H. Balanced scorecard e a gestão estratégica: uma abordagem prática.
+Rio de Janeiro: Alta Books,
+2019.](https://integrada.minhabiblioteca.com.br/#/books/9786555206920)
+
+* O livro oferece uma compreensão clara e prática da gestão estratégica e do
+  Balanced Scorecard. Ele fornece as ferramentas e conhecimentos necessários
+  para desenvolver e implementar estratégias eficazes, permitindo que os
+  leitores adquiram habilidades relevantes e aplicáveis no contexto
+  empresarial.
+
+[JR., A. P.; SAMPAIO, C. A. C.; FERNANDES, V. Gestão Empresarial e
+Sustentabilidade. Barueri: Manole,
+2017.](https://integrada.minhabiblioteca.com.br/#/books/9788520439135)
+
+* O livro oferece uma visão atualizada, prática e abrangente da gestão
+  empresarial sustentável. Ele fornece aos estudantes as ferramentas e
+  conhecimentos necessários para compreender e lidar com os desafios e
+  oportunidades relacionados à sustentabilidade nas organizações, preparando-os
+  para uma atuação responsável e eficaz no mundo dos negócios.
+
+[KALBACH, J. Design de navegação Web: otimizando a experiência do usuário.
+Porto Alegre: Bookman, 2009.
+](https://integrada.minhabiblioteca.com.br/#/books/9788577805310)
+
+* O livro é uma leitura essencial para profissionais de design e
+  desenvolvimento web, abordando tópicos como arquitetura de informação,
+  usabilidade, e experiência do usuário. Oferece insights práticos e
+  estratégias para criar interfaces eficientes, melhorando a interação do
+  usuário com websites e aplicativos.
+
+[MISSEL, S. Feedback corporativo: como saber se está indo bem. 2. ed. São
+Paulo: Benvirá, 2017.
+](https://integrada.minhabiblioteca.com.br/books/9788557170322)
+
+* Este livro analisa e descreve como o feedback pode ser utilizado em
+  organizações e em processos de avaliação, dando subsídios para os estudantes
+  conheçam essa ferramenta de desenvolvimento pessoal e organizacional. 
+
+[SILBERSCHATZ, A. Sistema de bancos de dados. 7. ed. Rio de Janeiro: LTC,
+2020.](https://integrada.minhabiblioteca.com.br/#/books/9788595157552/ )
+
+* Este livro abrangente sobre sistema de banco de dados apresenta desde os
+  fundamentos até os conceitos mais recentes, como Big Data e blockchain. Com
+  uma abordagem prática e teórica, cobre uma variedade de tópicos, incluindo
+  gerenciamento, implementação e aplicação de bancos de dados.
+
+[SILVA, L. F.; RIVA, A. D.; ROSA, G. A.; et al. Banco de dados não relacional.
+Porto Alegre: SAGAH,
+2021.](https://integrada.minhabiblioteca.com.br/#/books/9786556901534)
+
+* Este guia prático oferece uma referência completa sobre os bancos de dados
+  NoSQL, abordando suas classificações, contextos de uso, características e
+  tipos de dados. Leitura essencial para entender e aproveitar as vantagens dos
+  bancos de dados não relacionais na era dos grandes volumes de dados.
