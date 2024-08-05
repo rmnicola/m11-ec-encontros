@@ -4,19 +4,145 @@ sidebar_position: 2
 sidebar_class_name: autoestudo
 ---
 
+import Ttable1 from '@site/static/img/ttable1.png';
+import Ttable2 from '@site/static/img/ttable2.png';
+import Ttable3 from '@site/static/img/ttable3.png';
+
 # Como criar (praticamente) qualquer circuito lógico
+
+Criar circuitos lógicos é uma tarefa fundamental no projeto de
+microprocessadores. Sendo assim, vamos conversar sobre como fazer isso? A má
+notícia é que não existe atalhos para criar circuitos lógicos. A boa é que
+existe uma ferramenta que gera (quase) sempre o circuito lógico mais otimizado
+possível. O nome dessa ferramenta é o mapa de Karnaugh, mas, para entendê-lo
+precisamos primeiro entender a tabela verdade.
 
 ## 1. A tabela verdade
 
-A tabela verdade é uma ferramenta fundamental na lógica digital usada para
-representar o comportamento de um circuito lógico. Ela descreve todas as
-possíveis combinações de entradas e as respectivas saídas do circuito. Cada
-linha da tabela corresponde a uma combinação específica de valores de entrada,
-e a coluna correspondente indica o resultado esperado na saída. A tabela
-verdade é o ponto de partida para o design de circuitos lógicos, pois permite
-especificar claramente o comportamento desejado de uma função lógica,
-facilitando o processo de síntese de circuitos.
+:::info Autoestudo obrigatório
 
+<div style={{ textAlign: 'center' }}>
+    <iframe 
+        style={{
+            display: 'block',
+            margin: 'auto',
+            width: '100%',
+            height: '50vh',
+        }}
+        src="https://www.youtube.com/embed/C4MdUQJIhSE" 
+        frameborder="0" 
+        allowFullScreen>
+    </iframe>
+</div>
+
+:::
+
+As tabelas verdade são uma ferramenta muito simples em sua essência: a sua
+razão de existir é mapear todas as combinações de entrada possíveis de um
+circuito lógico e obter a saída para cada uma delas. Para entender melhor como
+isso pode ser feito, vamos olhar uma das tabelas verdades mais simples
+possíveis, a do *XOR*:
+
+<img 
+  src="https://www.build-electronic-circuits.com/wp-content/uploads/2022/09/Truth-table-XOR-gate.png"
+  alt="XOR"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '40vh',
+    marginRight: 'auto'
+  }} 
+/>
+<br/>
+<p><center>Fig 5.01 - A porta lógica *XOR* e sua tabela verdade.</center></p>
+
+A primeira coisa que precisamos notar é a *quantidade de linhas* da tabela
+verdade. Isso tem uma relação direta com a *quantidade de entradas do
+circuito*. Essa relação se dá pela equação 2^n, onde n é a quantidade de
+entradas do sistema.
+
+A seguir, preenchemos essas linhas com todas as comutações possíveis das
+entradas do circuito e, para cada uma dessas comutações, anotamos também se a
+saída é 1 ou 0. Vamos ver a tabela verdade de um exemplo *um pouco* mais
+complexo.
+
+<img 
+  src={Ttable1}
+  alt="Tabela verdade 1"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '40vh',
+    marginRight: 'auto'
+  }} 
+/>
+<br/>
+<p><center>Fig 5.02 - Tabela verdade de um circuito lógico.</center></p>
+
+Logo de cara, é muito difícil dizer qual é esse circuito lógico. A maneira como
+você vai interagir com tabelas verdades é muito mais parecida com esse segundo
+exemplo do que com o primeiro, pois essa é uma ferramenta geralmente utilizada
+para a criação de circuitos lógicos que representam a lógica descrita pela
+tabela verdade.
+
+Beleza, mas como fazer isso? É **muito** simples. Está vendo todas as linhas em
+que F3 é 1? Pegamos todas elas e "somamos" (leia-se, juntamos com portas *OR*).
+Dá uma olhada como isso fica:
+
+$$
+
+F_3 = \bar{X} \cdot \bar{Y} \cdot Z + \bar{X} \cdot Y \cdot Z + X \cdot \bar{Y}
+\cdot \bar{Z}
+
+$$
+
+:::info
+
+Sim, eu notei que a equação está aparecendo duas vezes. É algum bug do katex
+que eu ainda não consegui resolver. Se algum de vocês souber o que é, por favor
+me avise.
+
+:::
+
+Pronto, temos nossa equação lógica. Olha, eu sei que ela não parece muito
+otimizada e sei que você provavelmente já percebeu alguma forma de
+simplificá-la, mas vamos praticar o desapego até que a gente aprenda a usar o
+mapa de karnaugh? Beleza, boa. Mas antes disso, pratica com mais duas tabelas
+verdade aí:
+
+:::tip Exercício 5.01
+
+Baseando-se na tabela verdade abaixo, crie uma equação lógica que a represente.
+
+<img 
+  src={Ttable2}
+  alt="Tabela verdade 2"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '40vh',
+    marginRight: 'auto'
+  }} 
+/>
+
+:::
+
+:::tip Exercício 5.02
+
+Baseando-se na tabela verdade abaixo, crie uma equação lógica que a represente.
+
+<img 
+  src={Ttable3}
+  alt="Tabela verdade 3"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '40vh',
+    marginRight: 'auto'
+  }} 
+/>
+
+:::
 
 ## 2. Mapas de Karnaugh
 
@@ -28,9 +154,30 @@ comuns que podem ser combinados e simplificados. A organização dos valores da
 tabela verdade em uma grade específica permite que os projetistas identifiquem
 rapidamente padrões de agrupamento de 1s (para simplificação em forma
 disjuntiva) ou 0s (para simplificação em forma conjuntiva), que são essenciais
-para reduzir a complexidade dos circuitos.
+para reduzir a complexidade dos circuitos. A conversão do mapa de karnaugh para
+uma equação booleana pode ser feita a partir de um algoritmo. Deixei a tarefa
+de detalhar esse algoritmo para o GPT, mas também vou deixar um vídeo para
+vocês acompanharem o processo.
 
-### Algoritmo para Utilizar Mapas de Karnaugh
+### 2.1. Algoritmo para Utilizar Mapas de Karnaugh (by GPT)
+
+:::info Autoestudo obrigatório
+
+<div style={{ textAlign: 'center' }}>
+    <iframe 
+        style={{
+            display: 'block',
+            margin: 'auto',
+            width: '100%',
+            height: '50vh',
+        }}
+        src="https://www.youtube.com/embed/CwnfYzYnsuA" 
+        frameborder="0" 
+        allowFullScreen>
+    </iframe>
+</div>
+
+:::
 
 1. **Construção do Mapa:**
    - Identifique o número de variáveis da função booleana a ser simplificada.
@@ -71,22 +218,91 @@ para reduzir a complexidade dos circuitos.
    - Revise a expressão final para garantir que está na forma mais simplificada
      possível.
 
+Beleza. Agora que você viu como se usa um mapa de Karnaugh, vamos treinar um
+pouquinho?
+
+:::tip Exercício 5.03
+
+Baseando-se na tabela verdade abaixo, crie um mapa de karnaugh para ela e
+extraia a equação lógica simplificada.
+
+<img 
+  src={Ttable1}
+  alt="Tabela verdade 1"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '40vh',
+    marginRight: 'auto'
+  }} 
+/>
+
+:::
+
+:::tip Exercício 5.04
+
+Baseando-se na tabela verdade abaixo, crie um mapa de karnaugh para ela e
+extraia a equação lógica simplificada.
+
+<img 
+  src={Ttable3}
+  alt="Tabela verdade 3"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '40vh',
+    marginRight: 'auto'
+  }} 
+/>
+
+:::
+
 ## 3. Circuitos lógicos
+
+Quando falamos de circuitos lógicos, há dois tipos de circuitos distintos:
+
+1. Circuitos combinacionais
+2. Circuitos sequenciais
+
+Ambos tem a sua importância para a computação. A seguir, vamos ver as
+definições dos dois tipos de circuitos e resolver alguns exercícios de
+ambos.
 
 ### 3.1. Circuitos combinacionais
 
-Os circuitos combinacionais são fundamentais na eletrônica digital, pois suas
-saídas dependem exclusivamente das entradas atuais, sem memória de estados
-anteriores. Eles são utilizados em diversas aplicações, como aritmética,
-decodificação de sinais e roteamento de dados. Aqui estão alguns exemplos
-importantes:
+Circuitos combinacionais são aqueles em que suas saídas dependem apenas da
+combinação de entradas atuais, sem qualquer tipo de temporalidade. Eles são
+utilizados em diversas aplicações, como aritmética, decodificação de sinais e
+roteamento de dados. Aqui estão alguns exemplos importantes:
 
 - **Encoder (Codificador)**: Um encoder é um circuito que converte informações
   de formato de entrada para um formato de saída codificado. Ele aceita várias
-  entradas e gera uma saída binária que representa qual entrada está ativa. Por
-  exemplo, um encoder decimal para binário converte números decimais em
-  binários. Eles são utilizados em teclados de computador para codificar a
-  posição das teclas pressionadas.
+  entradas e gera uma saída binária que representa qual entrada está ativa. Um
+  bom exemplo de circuito codificador é um **multiplexador**. O papel do
+  multiplexador (ou mux, para os íntimos) é chavear sinais, utilizando uma
+  entrada codificada para escolher qual dos sinais será "carregado" no
+  circuito. Esse tipo de codificador é *essencial* para o funcionamento de
+  microprocessadores. Abaixo, podemos ver um exemplo de multiplexador 4:1.
+  Nele, temos as entradas X0 a X3, a saída M e os seletores C0 e C1.
+
+<img 
+  src="https://www.researchgate.net/publication/257799438/figure/fig1/AS:341731565424653@1458486562832/MUX-graphical-symbol-a-truth-table-b.png"
+  alt="Multiplexador"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '40vh',
+    marginRight: 'auto'
+  }} 
+/>
+<br/>
+<p><center>Fig 5.03 - Multiplexador 4:1.</center></p>
+
+:::tip Exercício 5.05
+
+Desenvolva o circuito lógico para o multiplexador acima.
+
+:::
 
 - **Decoder (Decodificador)**: Um decoder realiza a operação inversa de um
   encoder, convertendo uma entrada binária em um único sinal de saída ativado.
@@ -101,6 +317,20 @@ importantes:
   bits e produzir uma soma e um carry, enquanto um somador completo pode
   adicionar três bits (dois bits de entrada mais um carry-in). Somadores são
   componentes essenciais em processadores para realizar operações aritméticas.
+
+:::tip Exercício 5.06
+
+Baseando-se na descrição acima e nas suas proprias pesquisas, desenvolva o
+circuito lógico de um *meio-somador* e um *somador completo* de 1 bit.
+
+:::
+
+:::tip Exercício 5.07
+
+Extrapole o conhecimento adquirido sobre somadores e sua experiência resolvendo
+o exercício 5.06 para criar um *somador de 4 bits*.
+
+:::
 
 Esses circuitos são utilizados em várias aplicações, como unidades aritméticas
 e lógicas (ALUs), sistemas de comunicação e em dispositivos de processamento de
@@ -146,90 +376,3 @@ mais rápido, mas também mais complexo de projetar.
 Os circuitos assíncronos são utilizados em sistemas onde a resposta rápida a
 mudanças de entrada é crítica, como em sistemas de controle de comunicação e
 dispositivos de interface homem-máquina.
-
-## 3.3. Máquinas de estados
-
-Máquinas de estados são modelos matemáticos e conceituais que descrevem o
-comportamento de sistemas que podem estar em um número finito de estados. Elas
-são compostas por três elementos principais: estados, transições e ações. 
-
-- **Estados**: Representam as diferentes condições ou situações em que o
-  sistema pode estar. Cada estado define um conjunto de comportamentos ou ações
-  específicas que o sistema executa enquanto está nesse estado.
-
-- **Transições**: São mudanças de um estado para outro, que ocorrem em resposta
-  a eventos ou condições específicas. As transições são frequentemente
-  condicionadas por entradas ou eventos externos.
-
-- **Ações**: São as atividades realizadas pelo sistema, que podem ocorrer
-  durante as transições ou enquanto o sistema permanece em um estado
-  particular.
-
-### Importância e Aplicações
-
-As máquinas de estados são uma ferramenta poderosa e versátil para a modelagem
-e controle de sistemas em várias disciplinas. 
-
-#### Eletrônica
-
-Na eletrônica digital, máquinas de estados são amplamente utilizadas em
-controladores sequenciais para dispositivos como processadores, onde são
-essenciais para gerenciar a execução de instruções. Elas ajudam a coordenar
-operações internas e a interagir com periféricos externos. Por exemplo,
-unidades de controle em CPUs utilizam máquinas de estados para sequenciar a
-execução de instruções, controlar fluxos de dados e gerenciar a comunicação
-entre diferentes componentes do sistema.
-
-#### Robótica
-
-Em robótica, máquinas de estados são fundamentais para o desenvolvimento de
-comportamentos de controle e navegação. Robôs frequentemente enfrentam
-ambientes dinâmicos e precisam mudar de comportamento com base em suas
-percepções e decisões internas. Máquinas de estados permitem que os
-desenvolvedores definam claramente os diferentes modos de operação de um robô
-(como exploração, obstáculo evitado, ou retorno à base) e as condições sob as
-quais o robô deve transitar entre esses modos. Isso é particularmente útil em
-sistemas de controle autônomo e robótica móvel, onde é crucial responder
-adequadamente a mudanças no ambiente ou nos objetivos.
-
-#### Programação e Desenvolvimento de Software
-
-Na programação, máquinas de estados são usadas para modelar o fluxo de controle
-de software, especialmente em sistemas de software reativos, como GUIs
-(interfaces gráficas de usuário), jogos e sistemas embarcados. Elas são
-utilizadas para gerenciar estados de aplicativos, como em um jogo, onde o
-programa pode estar em estados como "menu principal", "jogando", "pausado" ou
-"fim de jogo". O uso de máquinas de estados ajuda a organizar o código de forma
-clara e modular, facilitando a manutenção e expansão do software.
-
-#### Sistemas de Comunicação e Protocolos
-
-Máquinas de estados são essenciais para o design de protocolos de comunicação,
-onde são usadas para modelar a sequência de mensagens trocadas entre diferentes
-sistemas ou componentes. Por exemplo, em protocolos de comunicação como TCP/IP,
-máquinas de estados ajudam a gerenciar as etapas de estabelecimento, manutenção
-e término de conexões, garantindo que os dados sejam transferidos de maneira
-confiável e ordenada.
-
-### Vantagens das Máquinas de Estados
-
-- **Clareza e Organização**: Elas fornecem uma estrutura clara para modelar
-  comportamentos complexos, facilitando a compreensão e a documentação do
-  sistema.
-- **Modularidade**: Permitem a decomposição de sistemas complexos em partes
-  menores e gerenciáveis, onde cada estado ou transição pode ser tratado como
-  um módulo separado.
-- **Verificação e Validação**: Facilita a análise formal de sistemas,
-  permitindo verificar propriedades como correção e ausência de condições de
-  corrida.
-
-### 3.3.1. Máquinas de estados vs autômatos
-
-Máquinas de estados e autômatos são conceitos intimamente relacionados. Ambos
-descrevem sistemas que podem estar em diferentes estados e mudar de estado em
-resposta a eventos ou condições de entrada. A principal diferença é que
-autômatos são uma formalização matemática usada para descrever máquinas de
-estados, especialmente em teoria da computação. Autômatos são essenciais para a
-criação de compiladores, onde são utilizados para o reconhecimento de padrões
-em cadeias de caracteres (como parte da análise léxica) e para a análise
-sintática de linguagens de programação.
