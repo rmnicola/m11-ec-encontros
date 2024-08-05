@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'M11 (EC)',
   tagline: 'Edge Computing',
-  favicon: 'icons/inteli.svg',
+  favicon: 'icons/sacrifice.webp',
 
   url: 'https://rmnicola.github.io',
   baseUrl: '/m11-ec-encontros',
