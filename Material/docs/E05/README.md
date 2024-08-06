@@ -20,7 +20,8 @@ slug: /e5
 />
 <br/>
 
-TODO
+link para sugestões: https://docs.google.com/spreadsheets/d/1LYz10Jum8f5Dtgz-IuqGc4wJQddxzvdYVgzue6YdXxI/edit?usp=sharing
+
 
 
 ## 1. Preparação pré-encontro
