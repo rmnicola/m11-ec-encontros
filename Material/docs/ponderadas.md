@@ -64,7 +64,7 @@ completo em um simulador de lógica. Explore arquiteturas simples como o SAP
 (Simple as Possible) e implemente registradores, circuitos lógicos e E/S. Além
 disso, desenvolva um conjunto enxuto de microcódigo.
 
-**Prazo:** A definir.
+**Prazo:** 07/09/2024
 
 **Mais detalhes:** Em breve.
 
@@ -76,7 +76,7 @@ disso, desenvolva um conjunto enxuto de microcódigo.
 microcontrolador (recomenda-se o ESP32). Considere um modelo que seja eficaz e
 execute em um microcontrolador com recursos limitados.
 
-**Prazo:** A definir.
+**Prazo:** 21/09/2024
 
 **Mais detalhes:** Em breve.
 
@@ -89,7 +89,7 @@ adicionar uma tarefa ao sistema de visão computacional da P2. Gerencie as
 tarefas para executar a verificação de visão computacional e comunicar os
 resultados a outro dispositivo sem fio.
 
-**Prazo:** A definir.
+**Prazo:** 21/09/2024
 
 **Mais detalhes:** Em breve.
 
@@ -101,7 +101,7 @@ resultados a outro dispositivo sem fio.
 minimalista capaz de carregar e executar um arquivo de modelo em formato aberto
 (exemplo: ONNX).
 
-**Prazo:** A definir.
+**Prazo:** 08/10/2024
 
 **Mais detalhes:** Em breve.
 
@@ -113,7 +113,7 @@ minimalista capaz de carregar e executar um arquivo de modelo em formato aberto
 da P4. Utilize ferramentas como OpenMP, MPI ou recursos nativos de paralelismo
 de linguagens de sistema (não Python).
 
-**Prazo:** A definir.
+**Prazo:** 08/10/2024
 
 **Mais detalhes:** Em breve.
 
@@ -125,7 +125,7 @@ de linguagens de sistema (não Python).
 da P4. Devido a restrições, utilize CUDA (ROCm é permitido, mas não
 recomendado) ou ferramentas de abstração como Bend.
 
-**Prazo:** A definir.
+**Prazo:** 10/10/2024
 
 **Mais detalhes:** Em breve.
 
