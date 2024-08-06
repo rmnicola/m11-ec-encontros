@@ -7,6 +7,7 @@ sidebar_class_name: autoestudo
 import Ttable1 from '@site/static/img/ttable1.png';
 import Ttable2 from '@site/static/img/ttable2.png';
 import Ttable3 from '@site/static/img/ttable3.png';
+import Grey from '@site/static/img/grey.png';
 
 # Como criar (praticamente) qualquer circuito lógico
 
@@ -107,8 +108,8 @@ me avise.
 Pronto, temos nossa equação lógica. Olha, eu sei que ela não parece muito
 otimizada e sei que você provavelmente já percebeu alguma forma de
 simplificá-la, mas vamos praticar o desapego até que a gente aprenda a usar o
-mapa de karnaugh? Beleza, boa. Mas antes disso, pratica com mais duas tabelas
-verdade aí:
+mapa de karnaugh? Beleza, boa. Mas antes disso, quero que você pratique com
+mais duas tabelas verdade.
 
 :::tip Exercício 5.01
 
@@ -146,18 +147,87 @@ Baseando-se na tabela verdade abaixo, crie uma equação lógica que a represent
 
 ## 2. Mapas de Karnaugh
 
-Os mapas de Karnaugh são uma técnica gráfica utilizada para simplificar
-expressões booleanas e minimizar o número de portas lógicas necessárias para
-implementar um circuito. Eles são particularmente eficazes para funções lógicas
-com até quatro ou cinco variáveis, facilitando a identificação visual de termos
-comuns que podem ser combinados e simplificados. A organização dos valores da
-tabela verdade em uma grade específica permite que os projetistas identifiquem
-rapidamente padrões de agrupamento de 1s (para simplificação em forma
-disjuntiva) ou 0s (para simplificação em forma conjuntiva), que são essenciais
-para reduzir a complexidade dos circuitos. A conversão do mapa de karnaugh para
-uma equação booleana pode ser feita a partir de um algoritmo. Deixei a tarefa
-de detalhar esse algoritmo para o GPT, mas também vou deixar um vídeo para
-vocês acompanharem o processo.
+Criada pelo matemático George Boole no século XIX, a álgebra booleana se tornou
+fundamental para a criação de circuitos lógicos que viriam a ser utilizados em
+computadores digitais. Assim como a álgebra convencional, há uma série de
+padrões e teoremas que ajudam a "enxugar" uma expressão booleana, chegando à
+expressão mínima capaz de representar uma lógica sem nenhuma perda. É
+absolutamente possível basear-se apenas nesses padrões e teoremas para
+simplificar equações lógicas, mas há uma ferramenta gráfica que torna esse
+processo muito mais simples e capaz de ser representado de forma algorítmica.
+
+Essa ferramenta foi criada nos anos 50 por Edward Veich e aperfeiçoada por
+Maurice Karnaugh, que dá o nome da versão que utilizamos até hoje. Estamos
+falando do *mapa de Karnaugh*. Esse mapa é, no fundo, uma representação da
+tabela verdade como um diagrama que busca agrupar os casos onde a saída do
+circuito é 1 e, assim, identificar padrões.
+
+**Código de Grey e a variação de bits**
+
+Uma das ferramentas que fazem o mapa de Karnaugh funcionar é o **código de
+Grey**. Honestamente, a explicação do código de Grey na Wikipedia está tão boa,
+que não estou achando que posso fazer melhor do que só adicionar o trecho aqui:
+
+> O código de Gray é um sistema de código binário inventado por Frank Gray. O
+> código é não ponderado onde de um número para outro apenas um bit varia. Este
+> sistema de codificação surgiu quando os circuitos lógicos digitais se
+> realizavam com válvulas termoiônicas e dispositivos eletromecânicos. Os
+> contadores necessitavam de potências muito elevadas e geravam ruído quando
+> vários bits modificavam-se simultaneamente. O uso do código Gray garantiu que
+> qualquer mudança variaria apenas um bit.[1]
+> 
+> Atualmente o código Gray é utilizado em sistemas sequenciais mediante o uso dos
+> Mapas de Karnaugh, já que o princípio do desenho de buscar transições mais
+> simples e rápidas segue vigente, apesar de que os problemas de ruído e potência
+> tenham sido reduzidos.
+
+A imagem abaixo representa o código de grey comparado com o sistema binário
+convencional.
+
+<img 
+  src={Grey}
+  alt="Código de grey"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '80vh',
+    marginRight: 'auto'
+  }} 
+/>
+<br/>
+<p><center>Fig 5.03 - Comparação entre o código de grey e o sistema
+binário.</center></p>
+
+Mas o que o código de grey tem a ver com o mapa de Karnaugh? Ou melhor, por quê
+isso é útil? Vamos dar uma olhadinha em um mapa de Karnaugh e sua contrapartida
+em tabela verdade:
+
+<img 
+  src="https://slideplayer.com/slide/5289300/17/images/60/Truth+Table+to+K-Map+Mapping.jpg"
+  alt="Ttable to Kmap"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '60vh',
+    marginRight: 'auto'
+  }} 
+/>
+<br/>
+<p><center>Fig 5.04 - Transição de uma tabela verdade com quatro entradas para
+um mapa de Karnaugh (ou Kmap, de forma mais simplificada). A ideia é conseguir
+agrupar os casos em que a função lógica é 1 e identificar quais conjuntos de
+variáveis podem ser eliminadas.</center></p>
+
+O motivo pelo qual o código de grey é interessante no mapa de Karnaugh é que a
+ideia é justamente que de uma coluna para outra e de uma linha para outra
+apenas uma variável mude. Assim, conseguimos identificar agrupamentos de 1 e
+verificar quais variáveis não variam nesse agrupamento. O que fazer quando
+notamos que a variável não varia no agrupamento? Simples, significa que ela não
+importa para aquele resultado e eliminamos ela.
+
+A conversão do mapa de karnaugh para uma equação booleana pode ser feita a
+partir de um algoritmo. Deixei a tarefa de detalhar esse algoritmo para o GPT,
+mas também vou deixar um vídeo para vocês acompanharem o processo.
 
 ### 2.1. Algoritmo para Utilizar Mapas de Karnaugh (by GPT)
 
@@ -304,6 +374,13 @@ Desenvolva o circuito lógico para o multiplexador acima.
 
 :::
 
+:::tip Exercício 5.06
+
+Multiplexadores são absolutamente fundamentais para os microprocessadores. Por
+quê? Onde eles são utilizados dentro de um processador? Pesquise.
+
+:::
+
 - **Decoder (Decodificador)**: Um decoder realiza a operação inversa de um
   encoder, convertendo uma entrada binária em um único sinal de saída ativado.
   Eles são amplamente utilizados em circuitos de memória para selecionar
@@ -318,14 +395,14 @@ Desenvolva o circuito lógico para o multiplexador acima.
   adicionar três bits (dois bits de entrada mais um carry-in). Somadores são
   componentes essenciais em processadores para realizar operações aritméticas.
 
-:::tip Exercício 5.06
+:::tip Exercício 5.07
 
 Baseando-se na descrição acima e nas suas proprias pesquisas, desenvolva o
 circuito lógico de um *meio-somador* e um *somador completo* de 1 bit.
 
 :::
 
-:::tip Exercício 5.07
+:::tip Exercício 5.08
 
 Extrapole o conhecimento adquirido sobre somadores e sua experiência resolvendo
 o exercício 5.06 para criar um *somador de 4 bits*.
@@ -343,12 +420,20 @@ anteriores além das entradas atuais. Eles possuem elementos de memória que
 armazenam informações sobre o passado do sistema, permitindo operações mais
 complexas e comportamentos temporais.
 
-#### 3.2.1. Circuitos sequenciais síncronos
+#### 3.2.1. Circuitos sequenciais síncronos (ou, a importância do clock)
 
-Nos circuitos sequenciais síncronos, as transições de estado são coordenadas
-por um sinal de clock. Este clock define momentos específicos em que o estado
-do circuito pode mudar, garantindo sincronismo e previsibilidade. Exemplos
-    incluem:
+Você já ouviu falar de *overclock*? Não? Ah, você já sabe o que vem aí né?
+
+:::tip Exercício 5.09
+
+O que significa quando fazemos *overclock* de um processador? Por que isso pode
+danificar o processador? O que é *clock*?
+
+:::
+
+O *clock* é fundamental para os circuitos sequenciais síncronos, afinal é ele
+quem *sincroniza* o circuito, dando o sinal de quando uma nova alteração deve
+ser feita. Alguns dos exemplos de circuitos sequenciais síncronos:
 
 - **Contadores**: São circuitos que incrementam ou decrementam contagens em
   resposta a pulsos de clock. Contadores síncronos mudam de estado
@@ -376,3 +461,12 @@ mais rápido, mas também mais complexo de projetar.
 Os circuitos assíncronos são utilizados em sistemas onde a resposta rápida a
 mudanças de entrada é crítica, como em sistemas de controle de comunicação e
 dispositivos de interface homem-máquina.
+
+:::warning Aviso
+
+Para criar circuitos sequenciais, precisamos estudar um componente chamado
+*flip flop*. Por isso que não tem nenhum exercício aqui. Calma, que já já eles
+aparecem. Quando discutirmos memória, falaremos sobre o flip flop e aí você vai
+fazer alguns exercícios de circuitos sequenciais.
+
+:::
