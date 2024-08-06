@@ -76,3 +76,17 @@ relação ao seu conhecimento relacionado a dois pontos:
 **Discussão aberta sobre os desafios do módulo** (100 - 120 min)
 
 ## 4. Slides
+
+<div style={{ textAlign: 'center' }}>
+    <iframe 
+        style={{
+            display: 'block',
+            margin: 'auto',
+            width: '100%',
+            height: '50vh',
+        }}
+        src="https://slides.com/rodrigomangoninicola/m11-ec-encontros/embed#/encontro1"
+        frameborder="0" 
+        allowFullScreen>
+    </iframe>
+</div>
