@@ -3,6 +3,7 @@ title: Ponderadas
 sidebar_position: 2
 slug: /ponderadas
 ---
+
 # Atividades Ponderadas do Módulo
 
 <img 
