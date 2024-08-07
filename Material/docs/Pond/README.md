@@ -65,7 +65,7 @@ completo em um simulador de lógica. Explore arquiteturas simples como o SAP
 (Simple as Possible) e implemente registradores, circuitos lógicos e E/S. Além
 disso, desenvolva um conjunto enxuto de microcódigo.
 
-**Prazo:** 07/09/2024
+**Prazo:** 08/09/2024
 
 **Mais detalhes:** Em breve.
 
@@ -79,7 +79,7 @@ execute em um microcontrolador com recursos limitados.
 
 **Prazo:** 21/09/2024
 
-**Mais detalhes:** Em breve.
+**Mais detalhes:** [link](./p2.md)
 
 ### 2.3. P3 - Concorrência em Microcontroladores
 
@@ -92,7 +92,7 @@ resultados a outro dispositivo sem fio.
 
 **Prazo:** 21/09/2024
 
-**Mais detalhes:** Em breve.
+**Mais detalhes:** [link](./p3.md)
 
 ### 2.4. P4 - Framework de Inferência para Deep Learning
 
@@ -104,7 +104,7 @@ minimalista capaz de carregar e executar um arquivo de modelo em formato aberto
 
 **Prazo:** 08/10/2024
 
-**Mais detalhes:** Em breve.
+**Mais detalhes:** [link](./p4.md)
 
 ### 2.5. P5 - Paralelismo para CPUs
 
@@ -116,7 +116,7 @@ de linguagens de sistema (não Python).
 
 **Prazo:** 08/10/2024
 
-**Mais detalhes:** Em breve.
+**Mais detalhes:** [link](./p5.md)
 
 ### 2.6. P6 - Paralelismo para GPUs
 
