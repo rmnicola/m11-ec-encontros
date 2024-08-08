@@ -1,6 +1,6 @@
 ---
-title: Ula ula
-sidebar_position: 1
+title: Operações artiméticas
+sidebar_position: 2
 sidebar_class_name: autoestudo
 ---
 
