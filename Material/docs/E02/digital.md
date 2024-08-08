@@ -88,8 +88,8 @@ são utilizados com um circuito lógico que serve para decodificar um sinal
 chamado de *binary coded decimal* para os 7 segmentos do display.
 
 <img 
-  src={Ex6}
-  alt="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcAyHE18CGnyih9ijBOSdFuLEJ0rUZtHZdPqhiklq8gpuMwC-Gx5ZPQdMhyphenhyphenJE5KR7FVu4CMVdfa9iPi3wD-E60nJVkatvQW_ve4FFddLbpCt8sNaiYInbxdCrv9CqFlbwnCoRT1-zDX-AL/s842/01.png"
+  src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/bcd.png"
+  alt="Display 7 seg"
   style={{ 
     display: 'block',
     marginLeft: 'auto',
@@ -100,10 +100,18 @@ chamado de *binary coded decimal* para os 7 segmentos do display.
 
 Sua tarefa é criar o decoder responsável por transformar um sinal de 4 bits no
 formado BCD nos 7 valores dos segmentos de modo que o display exiba o valor
-decimal relacionado à entrada.
+decimal relacionado à entrada. A imagem abaixo demonstra o formato BCD.
+
+<img 
+  src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh0FJuHqiJmdE7kw5Zkvr4E0cDerKZ9aXks_3A7G0zYik-5F3uYEEFncBfSaIElczLsXz68skCDGwtM36U7TVRQzLxqtUdsz0zoi1L9qsfpS5mi__5rBhUYmFApoKnjgwiQIt0KSf5ah6PR/s400/T_BCD.png"
+  alt="BCD"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '60vh',
+    marginRight: 'auto'
+  }} 
+/>
+
 
 :::
-
-
-
-
