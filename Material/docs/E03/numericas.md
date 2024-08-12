@@ -5,6 +5,8 @@ sidebar_class_name: autoestudo
 ---
 
 import Comp2 from '@site/static/img/comp2.png';
+import FloatDec from '@site/static/img/float_dec.png';
+import FloatBin from '@site/static/img/float_bin.png';
 
 # Como representar números utilizando bits
 
@@ -212,5 +214,196 @@ conversão para qualquer número. Pesquise-a e teste-a com os seguintes números
 
 :::
 
+## 2. Números reais
 
-## 2. Números de pontos flutuantes
+Boa parte dos valores que encontramos em problemas de cálculo numérico
+pertencem ao conjunto dos números reais e não dos inteiros. Sendo assim, é
+interessante discutir como podemos representar esses números em base 2. Para
+isso, vamos primeiro considerar com cuidado a maneira como representamos
+números fracionários em base 10. A figura 7.06 apresenta a maneira como
+trabalhamos com esse tipo de números.
+
+<img 
+  src={FloatDec}
+  alt="Float decimal"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '15vh',
+    marginRight: 'auto'
+  }} 
+/>
+<br/>
+<p><center>Fig 7.06 - Números reais representados em base 10. Utilizamos uma
+representação em que separamos a parte inteira e a parte fracionária utilizando
+um delimitador.</center></p>
+
+A maneira como lidamos com esses números é basicamente tratando a parte
+fracionária como uma soma de todas as frações em base 10. Podemos fazer a mesma
+coisa em base 2. O resultado pode ser visto na figura 7.07.
+
+<img 
+  src={FloatBin}
+  alt="Float binary"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '15vh',
+    marginRight: 'auto'
+  }} 
+/>
+<br/>
+<p><center>Fig 7.07 - Assim como trabalhamos com os números decimais, podemos
+utilizar números reais em base 2. Não é algo particularmente intuitivo pois não
+estamos acostumados a lidar com frações de base 2.</center></p>
+
+:::tip Exercício 7.07
+
+Converta o número real representado acima para a base decimal
+
+:::
+
+O problema? Não é exatamente uma forma *eficiente* de armazenar esses valores.
+Considerando o exemplo acima, em que temos 6 bits para representar os valores
+reais, a situação é a seguinte:
+
+* **Valor máximo possível** - *7.875*
+* **Valor mínimo possível** - *0.125*
+
+Beleza, mas não vamos usar *só* 6 bits para representar esse número, né? Vamos
+considerar que um float típicamente é representado com 32 bits (4 bytes). Se
+utilizarmos 16 bits para guardar a parte inteira e 16 para a parte fracionária,
+temos:
+
+* **Valor máximo possível** - *1023.9998919189*
+* **Valor mínimo possível** - *0.00001226452*
+
+Parece...bom, né? Calma aí. Note que não conseguimos chegar a números muito
+altos (~1024 é o máximo) e simultaneamente não chegamos nem em números tão
+pequenos assim. E isso *sem nem considerar números negativos*. Para colocar em
+perspectiva, se o valor mínimo possível fosse em metros, isso significaria que
+teríamos chegado apenas ao *centésimo de milimetros*. Isso não é o limite do
+aceitável para trabalhar com usinagem mecânica de precisão, quanto mais
+qualquer outra operação que necessite de uma precisão *realmente alta*.
+
+### 2.1. Números de ponto flutuante
+
+Vamos dar uma olhadinha nos valores reais do float?
+
+* **Valor máximo possível** - *3.402823466 x 10^38*
+* **Valor mínimo possível** - *1.175494351 x 10^-38*
+
+Pera, o quê? Esse *range* é **muito maior** do que o que conseguimos na nossa
+representação!
+
+Pois é. A maneira como o float é representado não tem nada a ver com aquela
+divisão de parte inteira e parte fracionária que vimos ali em cima. Na verdade,
+vou até roubar a definição da wikipedia em inglês para representação de pontos
+flutuantes. Acho que vai dar uma dica do que está acontecendo:
+
+> Na computação, aritmética de ponto flutuante é a aritmética que representa um
+> subconjunto de números pertencentes ao conjunto dos números reais utilizando um
+> valor inteiro de precisão fixa, chamado de *significando*, escalado por um
+> inteiro *expoente* com uma *base* fixa. Números com esse formato são chamados
+> de números de ponto flutuante. Por exemplo, o número 12.345 em formato de ponto
+> flutuante com cinco dígitos de precisão e base 10 fica:
+
+<img 
+  src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b6afee7f27ca53770592d822fe8e09f9c62a3015"
+  alt="Ponto flutuante"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '15vh',
+    marginRight: 'auto'
+  }} 
+/>
+<br/>
+<p><center>Fig 7.08 - Figura encontrada no [artigo da
+wikipedia](https://en.wikipedia.org/wiki/Floating-point_arithmetic) sobre
+aritmética de ponto flutuante.</center></p>
+
+Pois é. Números de ponto flutuante usam uma notação **muito** parecida com a
+**notação científica** e isso faz **toda a diferença**. Não, não é mágica. E
+sim, eu estou ciente de que não tem como representar uma quantidade maior de
+números com o mesmo número de bits. A *genialidade* dessa abordagem está na
+**distribuição desses números**. Veja a imagem 7.09:
+
+<img 
+  src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/FloatingPointPrecisionAugmented.png/1920px-FloatingPointPrecisionAugmented.png"
+  alt="Ponto flutuante"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '15vh',
+    marginRight: 'auto'
+  }} 
+/>
+<br/>
+<p><center>Fig 7.09 - Distribuição de números possíveis de serem representados
+com a notação de pontos flutuantes. Há uma concentração de números possíveis
+perto de 0 e, conforme a magnitude do valor inteiro aumenta, os números
+possíveis se tornam mais esparsos.</center></p>
+
+Pois é... A resposta é simples quando vemos assim: basta usar mais desses
+números disponíveis quando a granularidade é mais importante. Isto é, quando o
+valor numérico está perto de *zero*. Por outro lado, quando o valor se aproxima
+do limite superior ou do limite inferior da notação, há cada vez menos
+    granularidade nesses valores. Faz sentido, pois importa muito mais
+    *0.00001* quando o valor total é *0.00021* do que quando é
+    *2000000000.00001*. O único ponto de atenção é que a mudança de *float*
+    para *double* não é mais tão simples de decidir. Temos que olhar para a
+    *precisão* e não mais para o *range* de valores possíveis.
+
+Para encerrar essa incursão nos números reais representados em computador,
+vamos falar sobre um **padrão**. Afinal, eu posso escolher uma *base*
+diferente. De forma similar, posso escolher também tamanhos diferentes (em
+bits) para a base, expoente e significando. Entra o **IEE 754**.
+
+### 2.3. Padrão IEEE 754
+
+O vídeo abaixo mostra como funciona o padrão IEEE 754 para a representação de
+números de ponto flutuante na computação.
+
+:::info Autoestudo obrigatório
+
+<div style={{ textAlign: 'center' }}>
+    <iframe 
+        style={{
+            display: 'block',
+            margin: 'auto',
+            width: '100%',
+            height: '50vh',
+        }}
+        src="https://www.youtube.com/embed/ealNNf7lGoU" 
+        frameborder="0" 
+        allowFullScreen>
+    </iframe>
+</div>
+
+:::
+
+Vamos finalizar com alguns exercícios?
+
+:::tip Exercício 7.08
+
+Expresse os seguintes números em formato IEE de ponto flutuante com 32 bits:
+
+1. -5
+2. -6
+3. -1,5
+4. 384
+5. 1/16
+6. -1/32
+
+:::
+
+:::tip Exercício 7.09
+
+Considere um formato hipotético IEE de 7 bits, com 3 bits para o expoente e 3
+bits para a mantissa. Quantos valores é possível representar? Qual o valor
+máximo? Qual o valor mínimo? Quais os dois valores mais próximos de 0
+possíveis?
+
+:::
+
