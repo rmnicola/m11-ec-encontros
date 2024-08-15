@@ -4,12 +4,12 @@ sidebar_position: 8
 slug: /e4
 ---
 
-# Construindo circuitos lógicos
+# Entendendo registradores
 
 **Encontro em 15/08/2024**
 
 <img 
-  src="https://i.redd.it/gfcuj54lvtx21.jpg"
+  src="https://pm1.aminoapps.com/6685/e2789fbb49ca84f73ffda4e5578eb04a99e6d834_hq.jpg"
   alt="Puck!"
   style={{ 
     display: 'block',
@@ -19,9 +19,6 @@ slug: /e4
   }} 
 />
 <br/>
-
-TODO
-
 
 ## 1. Preparação pré-encontro
 
