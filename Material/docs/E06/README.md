@@ -6,7 +6,7 @@ slug: /e6
 
 # Arquitetura de CPUs I
 
-**Encontro em 22/08/2024**
+**Encontro em 19/08/2024**
 
 <img 
   src="https://i.redd.it/gfcuj54lvtx21.jpg"

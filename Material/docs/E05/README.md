@@ -6,7 +6,7 @@ slug: /e5
 
 # Acompanhamento de projeto
 
-**Encontro em 20/08/2024**
+**Encontro em 17/08/2024**
 
 <img 
   src="https://i.redd.it/gfcuj54lvtx21.jpg"
