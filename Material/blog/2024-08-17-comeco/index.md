@@ -31,7 +31,7 @@ humano revela que estava preparado e usa um canhão portátil para matar o
 demônio. Essa é a primeira vez que vemos o rosto do protagonista de Berserk,
 **Guts**.
 
-<center>![](./guts_intro.png)</center><br/>
+<center>![](./guts_intro.jpg)</center><br/>
 
 Sim, a cena é gráfica. Sim, provavelmente Berserk poderia começar com o que vem
 logo a seguir, sem essa introdução. Não, a cena não é completamente gratuita.
@@ -50,7 +50,7 @@ detalhada e cansativa. Não vemos o rosto do protagonista até que ele revela qu
 sabia exatamente onde estava se metendo e essa revelação mostra um rosto com
 feições mais demoniacas que o próprio monstro, que agora parece assustado.
 
-<center>![](./demon_scared.png)</center><br/>
+<center>![](./demon_scared.jpg)</center><br/>
 
 É uma cena carregada e que precisa de apenas quatro páginas para mostrar o que
 o mundo de Berserk guarda para o leitor. A sensação é de *repulsa*, *cansaço* e
@@ -58,7 +58,7 @@ o mundo de Berserk guarda para o leitor. A sensação é de *repulsa*, *cansaço
 detalhe que revela muito sobre a decisão de iniciar a trama com uma cena como
 essa: **Guts também se sentiu dessa forma**.
 
-<center>![](./guts_winded.png)</center><br/>
+<center>![](./guts_winded.jpg)</center><br/>
 
 ## Puck, o elfo
 
@@ -69,14 +69,14 @@ Guts aparece entrando na cidade em meio a guardas, mendigos e carruagens. Uma
 dessas carruagens chama a sua atenção. É uma carruagem carregando crianças e
 mulheres dentro do que parece ser uma jaula.
 
-<center>![](./cage.png)</center><br/>
+<center>![](./cage.jpg)</center><br/>
 
 Logo em seguida, a cena muda para uma taverna. Nela, conhecemos um dos
 personagens mais importantes de Berserk e o primeiro personagem que começa a
 nos mostrar de forma mais clara o que existe por trás dos panos do personagem
 principal. Estou falando de **Puck, o elfo**.
 
-<center>![](./puck.png)</center><br/>
+<center>![](./puck.jpg)</center><br/>
 
 Existe um constraste muito claro entre a cena inicial de Berserk e a introdução
 de um personagem com traços tão cartunescos e fantasiosos. Na verdade, dentro
@@ -106,7 +106,7 @@ manga. Quando Guts usa a sua espada (que é *grande demais para ser chamada de
 espada. Massiva, espessa e malacabada, era mais como um pedaço de ferro bruto*)
 é um **evento**.
 
-<center>![](./swing.png)</center><br/>
+<center>![](./swing.jpg)</center><br/>
 
 Aqui também novamente aparece a tendência de representar o personagem principal
 com *feições demoníacas* sempre que ele entra em ação. Guts não parece um
@@ -129,6 +129,99 @@ para conversar com ele.
 
 ## O apóstolo
 
-<center>![](./apostle.png)</center><br/>
+<center>![](./apostle.jpg)</center><br/>
+
+A conversa com o prefeito também é um momento que pauta a discussão sobre a
+humanidade de Guts. Após sabermos que o lorde de *Koka* sabe quem é o
+espadachim negro e considerando a cena inicial do volume, fica claro que caçar
+esses monstros é algo que o Guts não fez só uma ou duas vezes; é uma caçada
+deliberada e que ele conduz há tempo o suficiente para ficar conhecido entre os
+monstros. Isso só deixa ainda mais significativo quando o prefeito explica que
+ele *não tinha o que fazer*. Que ninguém conseguiria matar o lorde de Koka. Ao
+menos não **alguém que seja humano**. 
+
+Como um contraponto imediato, temos a maior manifestação de humanidade do Guts
+até aqui. Ele confronta o prefeito sobre o que ele *escolheu* fazer em nome da
+segurança da sua cidade. Nessa conversa, a expressão de Guts quando menciona
+que sabe exatamente o tipo de monstro com quem está lidando assim como a
+maneira como ele escolhe confrontar o prefeito sobre o que ele imediatamente
+percebeu que era uma oferenda de mulheres e crianças para acalmar o lorde é
+profundamente humana.
 
 <center>![](./mayor.jpg)</center><br/>
+
+O que acontece a seguir oferece um contraste que deixa a humanidade de Guts
+ainda mais clara. O prefeito vai até o castelo de Koka e se humilha perante o
+lorde. De forma muito similar ao que Guts faz, o lorde confronta o prefeito e o
+expõe como alguém que usa o bem coletivo como um pretexto para se proteger. A
+diferença aqui é que Guts, antes de assumir uma postura provocativa, demonstra
+uma expressão de profunda indignação com o que estava sendo feito na cidade. Já
+o lorde de Koka, bom... As imagens dizem tudo.
+
+<center>![](./koka1.jpg)</center><br/>
+
+<center>![](./koka2.jpg)</center><br/>
+
+Enquanto Guts se ocupa em escapar da masmorra, o lorde de Koka se prepara e
+inicia um massacre na cidade. Ele e sua cavalaria de mercenários assassina
+todos que cruzam o seu caminho sem se importar se são soldados, homens,
+mulheres, crianças ou idosos.
+
+Em meio ao caos, Guts aparece e junto com ele a tendência de Miura de desenhar
+o Guts em ação como um monstro. No entanto, cada vez mais aparecem rachaduras
+nessa representação de um monstro. Sinais claros de cansaço e esforço
+descomunais aparecem em determinados momentos das cenas de ação.
+
+<center>![](./tremble_guts.jpg)</center><br/>
+
+Inevitavelmente, chegamos ao momento que se construiu desde o primeiro momento
+deste volume; o confronto entre o ~questionavelmente~ humano Guts e o
+inquestionável monstro, o **apóstolo** e lorde de Koka. Temos aqui também a
+confirmação de que de fato Guts caça esses monstros, que se chamam de
+**apóstolos**.
+
+<center>![](./confront.jpg)</center><br/>
+
+O confronto começa e imediatamente após sobreviver a diversas flechadas no
+rosto, o apóstolo assume o que é sua provável forma original; um híbrido entre
+humano e cobra. Assim que a transformação acontece, a luta é completamente
+dominada pelo apóstolo. Guts, que até então só tinha mostrado lampejos de
+humanidade, agora deixa claro o quão difícil é para ele sobreviver a esses
+encontros com os apóstolos. Guts não é um herói típico de shounen, ele não tem
+algum poder especial que o torna o único a ser capaz de enfrentar esses
+monstros. Não há mais dúvidas ao ver essa batalha, Guts é decididamente apenas
+um humano.
+
+<center>![](./human.jpg)</center><br/>
+
+O que torna Guts especial é apenas um aparente instinto de sobrevivência
+extremamente apurado e incapacidade de desistir. E justamente no momento em que
+o apóstolo desdenhava da humanidade de Guts, ele consegue uma abertura para se
+libertar e usa sua espada em mais um *double-spread* monumental de Miura.
+
+<center>![](./cut.jpg)</center><br/>
+
+Aqui o tema da humanidade é mais uma vez reforçado com Guts devolvendo as
+provocações do apóstolo e mencionando que a fragilidade humana é perfeitamente
+contraposta com a sua vontade de viver. Diferente de Guts, o apóstolo se coloca
+em uma posição de implorar por sua vida.
+
+<center>![](./beg.jpg)</center><br/>
+
+Se antes havia um princípio de posicionar Guts como protagonista e o apóstolo
+como antagonista, essa premissa se desfaz ao final do volume. Guts apresenta um
+comportamento obsessivo e profundamente vingativo com relação aos apóstolos e o
+grupo que descobrimos estar hierarquicamente acima dos apóstolos, os **membros
+da mão divina**. Ao mesmo tempo, ele demonstra que não consegue suprimir sua
+capacidade de empatia e o quanto não é imune à dor e o esforço de caçar os
+apóstolos, algo que mesmo assim ele faz constantemente. 
+
+Guts não só é humano, como é um arquétipo daquilo que pode ser entendido como a
+forma mais terrena de humanidade. Pecados, dor e progresso mesmo frente a uma
+tarefa aparentemente impossível. A humanidade de Guts é ao mesmo tempo impura e
+pura, sem qualquer traço do messianismo visto em obras que posicionam o
+protagonista como *o escolhido* ou *o predestinado*. Para antagonizar esse tipo
+de humanidade, Berserk precisa de algo (ou alguém) que se coloque *acima da
+humanidade*. O apóstolo de Koke não é esse antagonista.
+
+## O humano
