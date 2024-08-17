@@ -199,8 +199,6 @@ extremamente apurado e incapacidade de desistir. E justamente no momento em que
 o apóstolo desdenhava da humanidade de Guts, ele consegue uma abertura para se
 libertar e usa sua espada em mais um *double-spread* monumental de Miura.
 
-<center>![](./cut.jpg)</center><br/>
-
 Aqui o tema da humanidade é mais uma vez reforçado com Guts devolvendo as
 provocações do apóstolo e mencionando que a fragilidade humana é perfeitamente
 contraposta com a sua vontade de viver. Diferente de Guts, o apóstolo se coloca
