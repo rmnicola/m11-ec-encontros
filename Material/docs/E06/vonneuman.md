@@ -289,6 +289,46 @@ A figura 12.07 apresenta a tabela completa de instruções do IAS.
 <br/>
 <p><center>Fig 12.07 - Tabela completa de instruções do IAS.</center></p>
 
+:::tip Exercício 12.01
+
+Considerando o conjunto de instruções da IAS, qual seria a instrução para
+carregar o conteúdo de memória do endereço 2 para o acumulador?
+
+:::
+
+:::tip Exercício 12.02
+
+Considere o seguinte conteúdo na memória da IAS onde ficam armazenadas as
+instruções do programa:
+
+<table style={{ marginLeft: 'auto', marginRight: 'auto', borderCollapse:
+'collapse', width: '50%' }}>
+    <thead style={{ textAlign: 'center' }}>
+        <tr>
+            <th scope="col">Endereço</th>
+            <th scope="col">Comando</th>
+        </tr>
+    </thead>
+    <tbody style={{ textAlign: 'center' }}>
+        <tr>
+            <td>08A</td>
+            <td>010FA210FB</td>
+        </tr>
+        <tr>
+            <td>08B</td>
+            <td>010FA0F08D</td>
+        </tr>
+        <tr>
+            <td>08C</td>
+            <td>020FA210FB</td>
+        </tr>
+    </tbody>
+</table>
+
+O que cada uma das instruções faz? Reescreva-as em sua forma mneumonica.
+
+:::
+
 ### 2.4. Ciclos de busca e execução
 
 Você pode estar se perguntando agora *como* exatamente é possível mesclar
@@ -341,3 +381,18 @@ operações da IAS.
 algoritmo consiste em buscar a próxima instrução da memória ou da IBR e guardar
 o código de operação no IR e o endereço do operando em MAR.</center></p>
 
+:::tip Exercício 12.03
+
+Para realizar a instrução do exercício 12.01, quantos acessos à memória a CPU
+precisa fazer para completá-la?
+
+:::
+
+:::tip Exercício 12.04
+
+Na IAS, descreva em português o processo que a CPU deve realizar para ler o
+valor a partir da memória e para escrever um valor na memória em termos do que
+está colocado em MAR, MBR, barramento de endereço, barramendo de dados e
+barramento de controle.
+
+:::
