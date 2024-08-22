@@ -14,6 +14,7 @@ import StateT2 from '@site/static/img/statet2.jpg';
 import StateT3 from '@site/static/img/statet3.jpg';
 import FetchCycle from '@site/static/img/fetchcycle.jpg';
 import LDACycle from '@site/static/img/ldacycle.jpg';
+import Malvino01 from '@site/static/img/malvino.jpg';
 
 # Simple As Possible Architecture
 
@@ -191,6 +192,23 @@ operações. As figuras 14.03 e 14.04 exibem essas operações possíveis.
 <br/>
 <p><center>Fig 14.04 - Tabela com os *opcodes* do SAP I.</center></p>
 
+:::tip Exercício 14.01
+
+Resolva o seguinte exercício do livro do Malvino.
+
+<img 
+  src={Malvino01}
+  alt="SapOpCodes"
+  style={{ 
+    display: 'block',
+    marginLeft: 'auto',
+    maxHeight: '50vh',
+    marginRight: 'auto'
+  }} 
+/>
+
+:::
+
 ## 3. Ciclo de Fetch
 
 Uma das coisas que ainda não vimos é como exatamente é possível implementar os
@@ -313,4 +331,11 @@ operação.
 <br/>
 <p><center>Fig 14.10 - As etapas T4, T5 e T6 para a operação
 *LDA*.</center></p>
+
+:::tip Exercício 14.02
+
+Faça os diagramas de ativação para os ciclos T4, T5 e T6 para as operações ADD,
+SUB, OUT e HLT.
+
+:::
 
