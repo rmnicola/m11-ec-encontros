@@ -4,15 +4,25 @@ sidebar_position: 2
 sidebar_class_name: autoestudo
 ---
 
-# Explorando o x86
+# A arquitetura x86
 
-## 1. Tipos de instruções
+## 1. Surgimento do x86
 
-## 2. Tipos de dados
+:::info Autoestudo obrigatório
 
-## 3. Saltos
+<div style={{ textAlign: 'center' }}>
+    <iframe 
+        style={{
+            display: 'block',
+            margin: 'auto',
+            width: '100%',
+            height: '50vh',
+        }}
+        src="https://www.youtube.com/embed/kvDBJC_akyg" 
+        frameborder="0" 
+        allowFullScreen>
+    </iframe>
+</div>
 
-## 4. Linguagem de montagem (assembly)
-
-## 5. Conjunto x86
+:::
 
