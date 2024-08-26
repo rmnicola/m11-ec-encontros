@@ -12,5 +12,7 @@ sidebar_class_name: autoestudo
 
 ## 3. Saltos
 
-## 4. Conjunto x86
+## 4. Linguagem de montagem (assembly)
+
+## 5. Conjunto x86
 
