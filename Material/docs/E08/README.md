@@ -37,5 +37,16 @@ TODO
 
 ## 4. Slides
 
-TODO
-
+<div style={{ textAlign: 'center' }}>
+    <iframe 
+        style={{
+            display: 'block',
+            margin: 'auto',
+            width: '100%',
+            height: '50vh',
+        }}
+        src="https://slides.com/rodrigomangoninicola/m11-ec-encontros/embed#/encontro8"
+        frameborder="0" 
+        allowFullScreen>
+    </iframe>
+</div>
