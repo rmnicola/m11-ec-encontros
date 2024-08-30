@@ -31,7 +31,7 @@ const config: Config = {
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
         },
-        blog: False,
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
