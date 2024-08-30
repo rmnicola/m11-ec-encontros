@@ -54,7 +54,6 @@ const config: Config = {
           position: 'left',
           label: 'Material de computação',
         },
-        {to: '/blog', label: 'A última luz do olho direito', position: 'right'},
         {
           href: 'https://github.com/rmnicola/m11-ec-encontros',
           label: 'GitHub',
