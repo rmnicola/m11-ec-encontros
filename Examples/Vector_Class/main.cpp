@@ -15,8 +15,8 @@ class Vector {
         // Construtor a partir de um vector
         Vector(const std::vector<double>& values): data(values) {}
 
-        void push(double value) {
-            data.push_back(value);
+        double& operator[](int index) {
+            return data[index];
         }
 
         double operator*(const Vector& other) const {
@@ -34,7 +34,7 @@ class Vector {
         friend std::ostream& operator<<(std::ostream& os, const Vector& obj) {
             os << "[ ";
             for(auto e: obj.data) {
-                os << e << " ";
+                os << e << ", ";
             }
             os << "]";
             return os;
@@ -44,6 +44,7 @@ class Vector {
 int main() {
     Vector X({1., 2., 3.});
     Vector Y({1., 1., 1.});
+    Y[2] = 3;
     std::cout << "X = " << X << std::endl;
     std::cout << "Y = " << Y << std::endl;
     std::cout << "X dot Y = " << X * Y << std::endl;
