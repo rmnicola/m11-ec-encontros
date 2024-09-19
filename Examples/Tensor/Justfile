@@ -1,0 +1,10 @@
+# Justfile
+
+# Define the compile recipe
+compile:
+    g++ -o a.out main.cpp
+
+# Define the run recipe, which depends on compile
+run: compile
+    ./a.out
+    @rm a.out
