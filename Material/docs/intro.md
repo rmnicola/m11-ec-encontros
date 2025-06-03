@@ -4,7 +4,7 @@ sidebar_position: 1
 slug: /
 ---
 
-# Edge Computing
+# Edge Computing teste
 
 <img 
   src="img/rick-slap.jpg"
